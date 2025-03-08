@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+    
+           color: white;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            background-color: #4a4e4e;
+        }
+        h1{
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            background-color:#8686864f; ;
+        }
+        main{
+            margin: auto;
+            height: 650px;
+            width: 550px;
+        }
+        form{
+            padding: 10px;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.537);
+        }
+        input{
+            background-color: rgba(250, 244, 244, 0.381)
+        }
+
+    </style>
+   
+</head>
+<body>
+    <h1>Cadastra-se</h1>
+    <main>
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <form action="cadastro.php" method="post" autocomplete="on">
+                <p><label for="inome">Nome</label> <input type="text" name="nome" id="inome" required placeholder="Nome Completo" minlength="8" maxlength="25" size="22"></p>
+                <p><label for="iemail">Email</label> <input type="email" name="email" id="iemail" placeholder="@" autocomplete="email" size="22"></p>
+                <p><label for="isen">Senha</label> <input type="password" name="sen" id="isen" placeholder="password" autocomplete="current-password" size="22"></p>
+                <p><label for="itel">Telefone</label> <input type="tel" name="tel" id="itel" autocomplete="tel" pattern="^\d{3}/\d{3}/\d{3}$" placeholder="xxx/xxx/xxx" size="20"></p>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Data</legend>
+            <form action="cadastro.php" method="post">
+                <p><label for="idata">Data de Nascimento</label> <input type="date" name="data" id="idata" value="2023-11-24"></p>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Sexo</legend>
+            <form action="cadastro.php" method="post">
+                <p><label for="isexm">Masculino</label> <input type="radio" name="sex" id="isexm" checked></p>
+                <p><label for="isexf">Femenino</label> <input type="radio" name="sex" id="isexf"></p>
+        
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Esporte</legend>
+            <form action="cadastro.pho">
+                <p><label for="ifut">Futbol</label> <input type="checkbox" name="fut" id="ifut" checked></p>
+                <p><label for="ibasq">Basquetibo</label> <input type="checkbox" name="basq" id="ibasq"></p>
+                <p><label for="inat">Nataçao</label> <input type="checkbox" name="nat" id="inat"></p>
+            </form>
+        </fieldset>
+        <p><input type="submit" value="Enviar"> <input type="reset" value="Limpar"></p>
+    </main>
+
+    
+</body>
+</html>
