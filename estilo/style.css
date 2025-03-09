@@ -301,7 +301,13 @@ main{
 }
 .button2{
   width: 32%;
-  background-color: #3d3d3dd0;
+  color: white;
+  background-color: #3d3d3dc7;
+  border: none;
+}
+.button2:hover{
+  background-color: #1cd8d2c8;
+  color: #08090b;
 }
 .direita2{
     display: flex;
