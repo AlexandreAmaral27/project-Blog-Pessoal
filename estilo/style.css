@@ -1,7 +1,13 @@
 @charset "utf8";
-body{
-    
-    display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+:root{
+    --font-padrao:arial,verdana,helvetica,sans-serif;
+    --font-destaque:'Bebas Neue', sans-serif;
+}
+body{ 
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
@@ -14,8 +20,24 @@ header{
 }
 header>h1{
     padding-top: 30px;
+    padding-bottom: 40px;
     color: white;
     text-align: center;
+    font-size: 3rem;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight:bolder;
+    font-style: normal;
+    text-shadow: 3px 5px 5px #797979ab;
+    
+}
+header>h2{
+    color: #1cd8d27c;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+
 }
 header>p{
     text-align: center;
@@ -24,31 +46,26 @@ header>p{
     margin-bottom: 20px;
     text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.806);
 }
-.item{
 
-    font-size: 0.8rem;
-    display: inline-block;
-    position: relative;
-    padding: 0 20px;
-    cursor: pointer;
-    z-index: 5;
-    min-width: 25%;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-}
 
 ul{
     background-color: #302f2f56;
     padding: 0px;
     margin: 0px;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+    
+    
 }
 ul li{
     list-style: none;
+    padding: 0 20px 0 20px;
+    
 }
 ul li a{
+   
     text-decoration: none;
     color: #797979;
     font-size: 20px;
@@ -87,3 +104,114 @@ ul li a:hover:before,ul li a:hover{
     transform: scaleX(1);
 
 }
+.linha{
+    position: relative;
+    top: -5px;
+    left: 5px;
+}
+
+.navicon{
+    display: flex;
+    align-items:center;
+    
+
+}
+.navicon img{
+    position: relative;
+    left: 170%;
+    width: 30px;
+    cursor: pointer;
+    filter: brightness(50%);
+}
+.navicon img:first-child{
+    margin-right: 5rem;
+}
+.img-menu{
+    display: none;
+}
+main{
+    color: white;
+       
+}
+.side-botton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.esquerda{
+    max-width: 500px;
+    padding-right: 10px;
+}
+.esquerda>h1{
+    
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+    margin-bottom: 1.5rem;
+}
+.esquerda>h2{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+}
+.esquerda>span{
+    font-size: 1.1rem;
+    padding-left: 10px;
+    color:#797979a8;
+}
+.esquerda>span:hover{
+   
+    text-decoration: underline;
+    transition: 3s;
+    
+    
+}
+.esquerda>p{
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-padrao);
+}
+.esquerda button{
+    background-color: #797979;
+    color: (0, 0, 0, 0.806);
+    border: none;
+    padding: 0.8rem 3.8rem;
+    border-radius: 99999px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all .2s;
+}
+.esquerda button:hover{
+    cursor: pointer;
+    background-color:#1cd8d2;
+}
+
+.esquerda {
+    height: 100%;
+    flex-basis: 50%;
+
+    
+ }
+ .direita{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-basis: 50%;
+    background-color: #4d4b4b30;
+    padding: 25px;
+    border-radius: 30px;
+    
+ }
+ .direita img{
+    width: 95%;
+    border-radius: 10px;
+ }
+ .conteiner{
+    border-bottom: 1px solid;
+ }
