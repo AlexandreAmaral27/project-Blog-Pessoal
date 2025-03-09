@@ -130,7 +130,7 @@ ul li a:hover:before,ul li a:hover{
     filter: brightness(50%);
 }
 .navicon img:first-child{
-    margin-right: 5rem;
+    
 }
 .img-menu{
     display: none;
@@ -195,6 +195,7 @@ main{
 .esquerda button:hover{
     cursor: pointer;
     background-color:#1cd8d2;
+    color: white;
 }
 
 .esquerda {
@@ -365,6 +366,7 @@ main{
 .header-bottom-side-left button:hover{
     cursor: pointer;
     background-color:#1cd8d2;
+    color: white;
 }
 
  .header-bottom-side-left{

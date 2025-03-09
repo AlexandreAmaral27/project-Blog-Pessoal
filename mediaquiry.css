@@ -1,33 +1,74 @@
 @charset "utf8";
 
-@media (max-width:800px) {
+@media (max-width:970px) {
   
    
-    .header-bottom-side{
+    .header{
         flex-direction: column;
         text-align: center;
         padding-top: 4rem;
     }
+    .header h1{
+      font-size: 2rem;
+    }
    
-    nav ul{
+     ul{
         flex-direction: column;
+        text-align: center;
        
     }
    
   
   
  }
-@media (max-width:800px){
+@media (max-width:970px){
    
-    .exclusive{
-       flex-direction: column-reverse;
+    .side-botton{
+      
+       flex-direction:column;
     }
-    .exclusive img{
-       margin-bottom: 4rem;
-    }
-  }
+   .conteiner-geral{
+      justify-content: center;
+       align-items: center;
+      flex-direction: column-reverse;
+   }
+   .side-botton2{
+      flex-direction: column;
+   }
+
+   .direita2 img{
+      width: 111%;
+      position: relative;
+      left: 0%;
+      
+   }
+   .exclusive{
+      flex-direction: column-reverse;
+   }
+   .inner-imagm{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 15px;
+          margin-bottom: 20px;
+          width: 90%;
+          height: 227px;
+          background-color: #3d3d3d68;
+      }
+      
+      
+      .links-footer ul li{
+         margin-bottom: 0.5rem;
+         cursor: pointer;
+         padding-bottom: 3px;
+         padding-top: 3px;
+       }
+   }
+   
+   
+  
  
-@media(max-width:800px){
+@media(max-width:970px){
     .testemunhos{
        flex-direction: column;
     }
@@ -35,7 +76,7 @@
        margin-bottom: 1.2rem;
     }
   }
-@media(max-width:800px){
+@media(max-width:1010px){
     .footer-content{
        display: inline;
        font-size: 0.8rem;
