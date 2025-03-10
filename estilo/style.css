@@ -123,15 +123,12 @@ ul li a:hover:before,ul li a:hover{
 
 }
 .navicon img{
-    position: relative;
-    left: 170%;
+    
     width: 30px;
     cursor: pointer;
     filter: brightness(50%);
 }
-.navicon img:first-child{
-    
-}
+
 .img-menu{
     display: none;
 }
@@ -197,6 +194,17 @@ main{
     background-color:#1cd8d2;
     color: white;
 }
+.button2{
+  display: block;
+  width: 100%;
+
+ 
+}
+
+.button3{
+  display: none;
+}
+
 
 .esquerda {
     height: 100%;
@@ -300,11 +308,13 @@ main{
   padding: 20px;
   border-radius: 20px;
 }
+
 .button2{
-  width: 32%;
+  width: 100%;
   color: white;
   background-color: #3d3d3dc7;
   border: none;
+  margin-top: 5px;
 }
 .button2:hover{
   background-color: #1cd8d2c8;
