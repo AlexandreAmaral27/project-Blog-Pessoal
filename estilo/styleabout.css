@@ -1,0 +1,21 @@
+@charset "utf8";
+
+.about{
+    position: relative;
+    left: -6%;
+    margin: auto;
+    justify-content: center;
+    padding: 20px;
+    display: flex;
+}
+.about-me{
+   
+    max-width: 749px;
+    background-color: rgba(66, 65, 65, 0.626);
+    padding: 4px 10px 4px 10px;
+
+}
+.habilidades{
+    padding-left: 20px;
+    max-width: 749px;
+}
