@@ -79,6 +79,7 @@ ul li a{
     padding: 10px 15px;
     position: relative;
 }
+
 ul li a:before{
     content: '';
     position: absolute;
@@ -107,10 +108,11 @@ ul li a:hover{
     color: #1cd8d2;
 }
 
-ul li a:hover:before,ul li a:hover{
+ul li a:hover:before,ul li a:hover {
     transform: scaleX(1);
 
 }
+
 
 .linha{
     position: relative;
@@ -130,6 +132,7 @@ ul li a:hover:before,ul li a:hover{
     cursor: pointer;
     filter: brightness(50%);
 }
+
 
 .img-menu{
     display: none;

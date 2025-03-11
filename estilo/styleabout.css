@@ -79,13 +79,13 @@
 .conteiner-resumo{
     padding: 10px;
     max-width: 500px;
-    height: 300px;
+   
 
 }
 .conteiner-resumo2{
     padding: 10px;
     max-width: 500px;
-    height: 300px;
+   
     background-color: rgba(66, 65, 65, 0.626);
 }
 .conteiner-imgcoff{
@@ -114,6 +114,76 @@
     transform: scale(1.2);
 
 }
+
+.conteiner01{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.inner-conteiner01{
+    padding: 10px;
+    max-width: 500px;
+   
+    background-color: rgba(66, 65, 65, 0.626);
+  
+    
+}
+
+.inner-conteiner02{
+    max-width: 500px;
+    padding: 10px;
+    max-width: 500px;
+   
+    
+}
+
+.redes-sociais{
+
+    width: 50%;
+    height: 500px;
+
+    background-color: rgb(142, 114, 114);
+}
+#telefone{
+    justify-content: center;
+    position: absolute;
+    left: 38%;
+    top: 216%;
+    transform: translate(-50% ,-50%);
+
+    height: 500px;
+    width: 248px;
+    
+    background: url(../imagens/frame-iphone.png) no-repeat;
+    
+}
+#tela{
+    
+    height: 106%;
+  
+}
+#redessociais{
+    display: flex;
+    text-align: right;
+    height: 100%;
+    justify-content: center;
+    
+}
+section img{
+    width: 50px;
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.374);
+    box-sizing: border-box;
+
+}
+#redessociais img:hover{
+    border: 1px solid rgb(255, 255, 255);
+    transform: translate(-3px,-3px);
+    box-shadow:5px 5px 20px rgba(0, 0, 0, 0.591);
+    transition:.2s, border,.1s;
+}
+
 .esperiencia{
     display: flex;
      width: 90%;
@@ -139,7 +209,7 @@
 .cursos{
     padding: 15px;
     width: 33.3333333333%;
-    height: 100%;
+    
     
 }
 .cursos li{
@@ -151,7 +221,7 @@
 .hobbies{
     padding: 15px;
     width: 33.3333333333%;
-    height: 100%;
+    
     
     
 }
