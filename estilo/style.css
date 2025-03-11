@@ -106,10 +106,12 @@ ul li a:after{
 ul li a:hover{
     color: #1cd8d2;
 }
+
 ul li a:hover:before,ul li a:hover{
     transform: scaleX(1);
 
 }
+
 .linha{
     position: relative;
     top: -5px;
@@ -193,6 +195,10 @@ main{
     cursor: pointer;
     background-color:#1cd8d2;
     color: white;
+
+}
+.esquerda button:active{
+  transform: scale(1.1);
 }
 .button2{
   display: block;
@@ -320,6 +326,7 @@ main{
   background-color: #1cd8d2c8;
   color: #08090b;
 }
+
 .direita2{
     display: flex;
     align-items: center;
@@ -378,7 +385,9 @@ main{
     background-color:#1cd8d2;
     color: white;
 }
-
+.header-bottom-side-left button:active{
+  transform: scale(1.1);
+}
  .header-bottom-side-left{
     height: 100%;
     flex-basis: 50%;
