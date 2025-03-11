@@ -13,7 +13,7 @@
     }
    
      ul{
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
         
        
@@ -23,7 +23,8 @@
       background-color: #302f2f56;
     }
     .conteiner-titular ul li{
-      background-color: #201e1e5a
+      background-color: #201e1e5a;
+      flex-direction: column;
     }
     .img-menu{
       
@@ -83,7 +84,7 @@
 
    }
   .menu02{
-   display: none;
+   display: block;
   }
   
   
