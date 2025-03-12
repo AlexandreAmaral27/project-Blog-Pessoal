@@ -517,6 +517,21 @@ main{
     margin-bottom: 0.5rem;
     cursor: pointer;
   }
+
+
+  .conteiner-redes-sociais{
+
+  }
+  .inner-redes-sociais{
+    display: flex;
+
+  }
+  .inner-redes-sociais img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+  }
   .copyright{
     color: #fff;
     padding: 2rem 0;
