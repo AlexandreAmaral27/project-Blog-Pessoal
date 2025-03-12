@@ -1,0 +1,21 @@
+@charset "utf8";
+
+
+.inner01{
+    line-height: 22px;
+}
+.inner-full-stack{
+    background-color: rgba(66, 65, 65, 0.626);
+}
+.inner-full-stack h2{
+    text-align: center;
+    padding: 10px;
+   
+    
+ }
+ .conteiner-geral{
+    margin-bottom: 5%;
+
+ }
+
+
