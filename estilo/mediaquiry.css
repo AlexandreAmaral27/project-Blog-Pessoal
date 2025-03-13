@@ -164,10 +164,11 @@
          text-align: left;
           
        }
+       .direita2{
+         width:100%;
+       }
        .direita2 img{
-         width: 50%;
-         position: relative;
-         left: -1px;
+         width: 91%;
          
        }
 
@@ -176,6 +177,7 @@
    
    
   
+   
 
 
 
