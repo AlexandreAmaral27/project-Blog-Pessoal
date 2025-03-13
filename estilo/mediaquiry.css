@@ -149,11 +149,30 @@
          padding-bottom: 3px;
          padding-top: 3px;
        }
+       
+       .inner-Visao-geral{
+         width: 99%;
+       }
+       .visao-geral02{
+         padding: 10px 0px 10px 0px;
+         width: 100%;
+
+       }
+       
+       .prf{
+         padding: 10px;
+         text-align: left;
+          
+       }
 
        
    }
    
    
+  
+
+
+
   
  
 @media(max-width:970px){
