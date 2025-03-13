@@ -63,4 +63,26 @@
     
         
     }
+    .conteiner-about2{
+        display: flex;
+        justify-content: center;
+        
+
+    }
+    .about2{
+        
+    }
+    .esperiencia{
+        display: flex;
+        justify-content: center;
+        
+        flex-direction: column;
+
+    }
+    .esperiencia .esperiencia02 {
+        display: flex;
+        justify-content: center;
+        border: 1px solid rgba(128, 125, 125, 0.773);
+       
+    }
 }
