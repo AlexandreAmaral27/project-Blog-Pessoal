@@ -116,7 +116,7 @@
    .conteiner-geral{
       justify-content: center;
        align-items: center;
-      flex-direction: column-reverse;
+      flex-direction: column;
    }
    .side-botton2{
       flex-direction: column;
