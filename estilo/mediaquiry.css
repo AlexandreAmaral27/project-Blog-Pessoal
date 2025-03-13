@@ -149,12 +149,26 @@
          padding-bottom: 3px;
          padding-top: 3px;
        }
+
+       
    }
    
    
   
  
 @media(max-width:970px){
+    .cor-de-fundo{
+      display: flex;
+      justify-content: center;
+      
+    }
+    .header-inner-conteiner{
+      width: 100%;
+    }
+    .header-bottom-side-right img{
+      width: 485px;
+      
+    }
     .testemunhos{
        flex-direction: column;
     }
