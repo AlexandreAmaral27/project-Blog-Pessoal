@@ -164,6 +164,12 @@
          text-align: left;
           
        }
+       .direita2 img{
+         width: 50%;
+         position: relative;
+         left: -1px;
+         
+       }
 
        
    }
