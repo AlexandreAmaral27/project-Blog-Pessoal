@@ -49,10 +49,14 @@
     border-radius: 30px;
     background-color: gray;
     border: none;
+    transition: all 0.3s ease;
+    
  }
  .inner-call-action button:hover{
     cursor: pointer;
     background-color:#1cd8d2;
+    box-shadow: 0 10px 20px #18beb84e;
+    transform: translateY(-5px);
     
 
 }
