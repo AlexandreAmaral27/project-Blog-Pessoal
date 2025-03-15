@@ -222,9 +222,13 @@ section img{
      
      
 }
+.esperiencia02{
+
+    width: 33.3333333333%;
+}
 .idiomas{
     padding: 15px;
-    width: 33.3333333333%;
+   
     height: 100%;
     
     
@@ -236,7 +240,7 @@ section img{
 }
 .cursos{
     padding: 15px;
-    width: 33.3333333333%;
+    
     
     
 }
@@ -246,9 +250,9 @@ section img{
 
 }
 
-.hobbies{
+ .hobbies{
     padding: 15px;
-    width: 33.3333333333%;
+    
     
     
     

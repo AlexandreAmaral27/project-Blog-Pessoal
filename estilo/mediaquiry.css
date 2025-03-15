@@ -86,6 +86,13 @@
   .menu02{
    display: block;
   }
+  .conteiner{
+   display: flex;
+   justify-content: center;
+  }
+  .side-botton2{
+    width: 400px;
+  }
   
   
  }
