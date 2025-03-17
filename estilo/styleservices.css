@@ -25,13 +25,17 @@
     
  }
  .inner-call-action{
-    
     background-color: rgba(66, 65, 65, 0.626);
     width: 460px;
     height: 100%;
     text-align: center;
     border-radius: 25px;
+    transition: all 2s ease-out;
 
+ }
+ .inner-call-action:hover{
+   transition: all 1s ease-in-out;
+   box-shadow: 0px 0px 5px 4px #1cd8d256;
  }
  .inner-call-action h1{
     padding: 10px;
