@@ -9,6 +9,34 @@
     <link rel="stylesheet" href="estilo/mediaquiry.css">
     <link rel="stylesheet" href="estilo/styleservices.css">
     <link rel="stylesheet" href="estilo/mediaquiryservices.css">
+    <style>
+       
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .service:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .service h2 {
+            margin-bottom: 10px;
+        }
+        .service p {
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -56,6 +84,14 @@
             </div>
         </div>
         <br>
+
+        <div class="conteiner-services">
+            <h1>Nossos Serviços</h1>
+                   <div class="services-container" id="services">
+            <!-- Serviços serão adicionados aqui via JavaScript -->
+                   </div>
+        </div>
+
         <div class="inner-full-stack">
             <h2>SERVICES OFFERED</h2>
         </div>
@@ -285,5 +321,27 @@
           <p>Copyright 2025 - Alexandre Amaral - All rights reserved</p>
         </div>
      </footer>
+
+     <script>
+        const services = [
+            { title: "Desenvolvimento Web", description: "Criamos sites modernos, responsivos e otimizados para SEO." },
+            { title: "Aplicações Mobile", description: "Desenvolvemos aplicativos para Android e iOS com alta performance." },
+            { title: "E-Commerce", description: "Criamos lojas virtuais completas e integradas com meios de pagamento." },
+            { title: "SEO e Marketing Digital", description: "Aprimoramos a visibilidade do seu site nos mecanismos de busca." },
+            { title: "Manutenção e Suporte", description: "Oferecemos suporte contínuo e manutenção para sistemas e sites." }
+        ];
+
+        function loadServices() {
+            const container = document.getElementById("services");
+            services.forEach(service => {
+                let serviceElement = document.createElement("div");
+                serviceElement.classList.add("service");
+                serviceElement.innerHTML = `<h2>${service.title}</h2><p>${service.description}</p>`;
+                container.appendChild(serviceElement);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", loadServices);
+    </script>
 </body>
 </html>

@@ -1,6 +1,9 @@
 @charset "utf8";
 
-
+.conteiner-services{
+   color: white;
+   text-align: center;
+}
 .inner01{
     line-height: 22px;
 }

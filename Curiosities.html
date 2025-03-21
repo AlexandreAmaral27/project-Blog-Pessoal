@@ -18,6 +18,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 500px;
+            height: 62px;
             margin: 20px auto;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -34,6 +35,63 @@
         }
         button:hover {
             background-color: #1cd8d2;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .curiosity-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .curiosity {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            width: 45%;
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInUp 0.5s ease-in-out forwards;
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .curiosity:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .curiosity.active {
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            background: #ff9800;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            transition: background 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background: #e68900;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -107,31 +165,44 @@
              </div>
             
           <div class="inner-Visao-geral inner01">
-           <h4>Curiosidades sobre meu trabalho:</h4>
-           <p>• Meu primeiro projeto – Uma breve história do primeiro projeto que desenvolvi</p>
-
-           <p>• Use of technologies such as React, Vue.js, etc.</p>
-           <p>• Focus on usability and modern design (UI/UX)</p>
-
-           <h4> Fatos divertidos e inusitados</h4>
-           <p>• Bug lendário – Em 1969, um bug fez a Apollo 11 quase abortar seu pouso na Lua!</p>
-
-           <p>• O primeiro vírus de computador – Chamado "Creeper", foi criado em 1971 como um experimento</p>
-
-           <p>•Quanto código tem a internet? – Estima-se que só o Google tenha mais de 2 bilhões de linhas de código!</p>
            
-           <h4> 🚀 Curiosidades sobre Performance e Otimização</h4>
-           <p>• 1 segundo pode custar milhões – Amazon descobriu que um atraso de 100ms pode reduzir as vendas em 1%.</p>
+           <h2> Fatos divertidos e inusitados</h2>
+         
+           <h4>💻 O Que é Ser Full Stack?</h4>
 
-           <p>• O Google usa tempo de carregamento no SEO – Sites mais rápidos têm vantagem nos resultados de busca.</p>
+          <p>Precisa lidar com design, bancos de dados e servidores.</p>
+          <p>É como ser o "faz-tudo" do mundo da programação.</p>
+          <p>Empresas adoram full stacks por sua versatilidade.</p>
+          <!-- Mas eles frequentemente se sentem sobrecarregados.
+          O lema não oficial é: "Se dá erro, a culpa é sua".
+          Sempre tem que aprender novas tecnologias.
+          Dormir? Só depois do deploy! 🚀 -->
+          <h4>🏗️ O Primeiro Full Stack da História</h4>
+          <p>No começo da web, um dev fazia tudo sozinho!</p>
+          <p>HTML, CSS, JavaScript e servidores eram novidade.</p>
+          <p>O primeiro site do mundo foi criado em 1991 por Tim Berners-Lee.</p>
+          <p>Hoje, um full stack usa frameworks modernos.</p>
 
-           <p>• O maior site da web – Wikipedia tem mais de 60 milhões de páginas e cresce todos os dias.</p>
+          <h4>🐛 Full Stack e os Bugs Inexplicáveis</h4>
+          <p>Devs full stack vivem caçando bugs misteriosos.</p>
+          <p>O código funciona no local, mas quebra no servidor.</p>
+          <p>Um console.log() pode salvar vidas.</p>
+          <p>Mas também pode ser uma armadilha sem fim.</p>
+          <p>Stack Overflow é o melhor amigo do full stack.</p>
 
+          <!-- <h4>Curiosidades sobre meu trabalho:</h4>
+           <p>• Meu primeiro projeto – Nosso primeiro projeto foi criar um site simples para uma loja local. Sem muita experiência, enfrentamos desafios com responsividade e desempenho. Após noites de ajustes, entregamos um site funcional e moderno. O cliente ficou satisfeito e viu um aumento nas vendas. Esse projeto nos mostrou o poder do desenvolvimento web! 🚀</p> -->
            
           </div>
              
         </div>
         <br>
+        <div class="container">
+            <h1>Curiosidades sobre Full Stack</h1>
+            <div class="curiosity-list"></div>
+            <button onclick="addCuriosity()">Adicionar Curiosidade</button>
+        </div>
+
         <div class="inner-full-stack">
             <h2>WORK PROCESS</h2>
         </div>
@@ -239,6 +310,43 @@
             "JavaScript foi criado em apenas 10 dias por Brendan Eich.",
             "O primeiro bug de computador foi um inseto real encontrado dentro de um hardware.",
             "O Google processa mais de 8,5 bilhões de pesquisas por dia.",
+            "Python foi nomeado em homenagem ao grupo de comédia Monty Python, não à cobra!",
+            "A primeira versão do Windows foi lançada em 1985 e exigia apenas 256 KB de memória.",
+            "Linus Torvalds criou o Linux como um projeto pessoal quando tinha apenas 21 anos.",
+            "O primeiro domínio registrado na internet foi 'symbolics.com' em 1985.",
+            "Tim Berners-Lee inventou a World Wide Web em 1989 enquanto trabalhava no CERN.",
+            "O primeiro computador eletrônico, o ENIAC, pesava cerca de 27 toneladas!",
+            "JavaScript foi originalmente chamado de Mocha e depois LiveScript antes de receber seu nome atual.",
+            "O CSS foi criado em 1996 para separar o design do conteúdo em páginas web.",
+            "O HTML5 trouxe novas tags como <article>, <section> e <canvas> para melhorar a estrutura e interatividade da web.",
+            "O primeiro mouse de computador foi feito de madeira em 1964.",
+            "O primeiro email foi enviado por Ray Tomlinson para si mesmo em 1971.",
+            "Bill Gates escreveu seu primeiro programa de software aos 13 anos.",
+            "O Google foi originalmente chamado de 'Backrub'.",
+            "O primeiro telefone celular foi criado em 1973 e pesava 1,1 kg.",
+            "A Apple quase faliu nos anos 90 antes do retorno de Steve Jobs.",
+            "O primeiro site da web ainda está ativo: info.cern.ch",
+            "O YouTube foi criado por ex-funcionários do PayPal em 2005.",
+            "A primeira versão do iPhone não tinha uma App Store.",
+            "A Tesla foi fundada em 2003 e não foi criada por Elon Musk.",
+            "O nome Bluetooth vem de um rei viking do século X, Harald Bluetooth Gormsson.",
+            "O nome 'Wi-Fi' não significa nada, foi apenas um nome de marca criado por marketing.",
+            "Mais de 90% das moedas digitais do mundo são armazenadas offline.",
+            "O primeiro videogame comercial foi Pong, lançado em 1972.",
+            "O Facebook começou como um site exclusivo para Harvard em 2004.",
+            "Hackers éticos ajudam empresas a melhorar sua segurança digital.",
+            "A senha mais comum do mundo ainda é '123456'.",
+            "O primeiro spam foi enviado em 1978 para vender computadores DEC.",
+            "O Amazon Echo foi inspirado na voz do computador de Star Trek.",
+            "A câmera do primeiro iPhone tinha apenas 2 megapixels.",
+            "O primeiro site da Wikipedia foi lançado em 2001.",
+            "O primeiro smartphone foi criado pela IBM em 1992 e chamado de 'Simon'.",
+            "Existem mais de 1 bilhão de sites na internet atualmente.",
+            "Cerca de 40% dos sites na web usam WordPress.",
+            "O maior data center do mundo está localizado na China.",
+            "A NASA ainda usa disquetes em alguns sistemas antigos.",
+            "O primeiro algoritmo foi escrito por Ada Lovelace no século XIX.",
+            "Os supercomputadores modernos podem processar bilhões de cálculos por segundo.",
             "A senha mais comum do mundo ainda é '123456'."
         ];
 
@@ -246,6 +354,49 @@
             const randomIndex = Math.floor(Math.random() * curiosities.length);
             document.getElementById("curiosity").textContent = curiosities[randomIndex];
         }
+    </script>
+
+    <script>
+    const curiosityList = document.querySelector('.curiosity-list');
+    const curiositie = [
+        "💻 O primeiro site foi criado em 1991 por Tim Berners-Lee.",
+        "🖥️ JavaScript foi criado em apenas 10 dias!",
+        "🔥 O primeiro 'bug' era um inseto real dentro de um computador.",
+        "🚀 Full Stack Developers lidam com frontend e backend ao mesmo tempo.",
+        "🎮 O primeiro jogo eletrônico foi feito em 1958 e rodava em um osciloscópio!",
+        "🌍 O HTML5 foi lançado em 2014 e revolucionou o desenvolvimento web.",
+        "🔧 O Stack Overflow foi criado em 2008 e se tornou o maior fórum de programação.",
+        "💡 O CSS Grid e Flexbox facilitaram muito a criação de layouts responsivos.",
+        "🤖 Inteligência Artificial está sendo usada para gerar código automaticamente!",
+        "📡 A primeira mensagem enviada pela internet foi 'LOGIN', mas caiu após 'LO'!"
+    ];
+    
+    function displayCuriosities() {
+        curiosityList.innerHTML = '';
+        curiosities.slice(0, 4).forEach((text, index) => {
+            addCuriosityElement(text, index);
+        });
+    }
+
+    function addCuriosity() {
+        const randomIndex = Math.floor(Math.random() * curiosities.length);
+        addCuriosityElement(curiosities[randomIndex]);
+    }
+    
+    function addCuriosityElement(text, index = curiosityList.children.length) {
+        const newCuriosity = document.createElement('div');
+        newCuriosity.classList.add('curiosity');
+        newCuriosity.innerText = text;
+        newCuriosity.style.animationDelay = `${index * 0.1}s`;
+        
+        newCuriosity.addEventListener('click', () => {
+            newCuriosity.classList.toggle('active');
+        });
+        
+        curiosityList.appendChild(newCuriosity);
+    }
+    
+    displayCuriosities();
     </script>
 </body>
 </html>

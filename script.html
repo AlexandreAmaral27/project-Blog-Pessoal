@@ -3,138 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curiosidades Interativas</title>
+    <title>Curiosidades Full Stack</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #007BFF, #00C853);
-            color: white;
-            padding: 50px;
-            margin: 0;
-        }
-        .curiosity-container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
-            margin: 20px auto;
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-        }
-        .curiosity-container:hover {
-            transform: scale(1.05);
-        }
-        .curiosity {
-            display: none;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 10px 0;
-            color: #fff;
-        }
-        button {
-            background: #FF9800;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background 0.3s, transform 0.2s;
-        }
-        button:hover {
-            background: #F57C00;
-            transform: scale(1.1);
-        }
-        .history {
-            margin-top: 20px;
-            text-align: left;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(5px);
-        }
-        .history h2 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .history ul {
-            list-style: none;
-            padding: 0;
-        }
-        .history li {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .history li:hover {
-            background: rgba(255, 255, 255, 0.5);
-        }
+       
     </style>
 </head>
 <body>
-    <h1>Curiosidades sobre Desenvolvimento</h1>
-    <div class="curiosity-container" onclick="toggleCuriosity()">
-        <p id="curiosity-text">Clique na caixa para ver uma curiosidade!</p>
-        <div class="curiosity" id="curiosity-box"></div>
-    </div>
-    <button onclick="clearHistory()">Limpar Histórico</button>
     
-    <div class="history">
-        <h2>Histórico de Curiosidades</h2>
-        <ul id="history-list"></ul>
-    </div>
 
-    <script>
-        const curiosities = [
-            "Python foi nomeado em homenagem ao grupo de comédia Monty Python, não à cobra!",
-            "A primeira versão do Windows foi lançada em 1985 e exigia apenas 256 KB de memória.",
-            "Linus Torvalds criou o Linux como um projeto pessoal quando tinha apenas 21 anos.",
-            "O primeiro domínio registrado na internet foi 'symbolics.com' em 1985.",
-            "Tim Berners-Lee inventou a World Wide Web em 1989 enquanto trabalhava no CERN.",
-            "O primeiro computador eletrônico, o ENIAC, pesava cerca de 27 toneladas!",
-            "JavaScript foi originalmente chamado de Mocha e depois LiveScript antes de receber seu nome atual.",
-            "O CSS foi criado em 1996 para separar o design do conteúdo em páginas web.",
-            "O HTML5 trouxe novas tags como <article>, <section> e <canvas> para melhorar a estrutura e interatividade da web."
-        ];
-        
-        let history = [];
-
-        function getRandomCuriosity() {
-            return curiosities[Math.floor(Math.random() * curiosities.length)];
-        }
-
-        function toggleCuriosity() {
-            const curiosityBox = document.getElementById("curiosity-box");
-            const historyList = document.getElementById("history-list");
-            
-            let newCuriosity = getRandomCuriosity();
-            
-            curiosityBox.textContent = newCuriosity;
-            curiosityBox.style.display = "block";
-            
-            if (!history.includes(newCuriosity)) {
-                history.push(newCuriosity);
-                let listItem = document.createElement("li");
-                listItem.textContent = newCuriosity;
-                historyList.appendChild(listItem);
-            }
-        }
-
-        function clearHistory() {
-            history = [];
-            document.getElementById("history-list").innerHTML = "";
-            document.getElementById("curiosity-box").style.display = "none";
-        }
-    </script>
+    
 </body>
 </html>
-
