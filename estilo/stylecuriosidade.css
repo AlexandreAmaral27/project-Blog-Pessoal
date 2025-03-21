@@ -1,0 +1,14 @@
+@charset "utf8";
+
+.conteiner-script-curiosidade{
+    
+    background-color: #08090b;
+    padding: 10px;
+    text-align: center;
+}
+.inner-script-curiosidade{
+    padding: 20px;
+    background-color: rgba(66, 65, 65, 0.686);
+   
+
+}

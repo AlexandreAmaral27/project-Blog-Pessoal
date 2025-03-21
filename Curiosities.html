@@ -7,6 +7,35 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="estilo/style.css">
     <link rel="stylesheet" href="estilo/mediaquiry.css">
+    <link rel="stylesheet" href="estilo/stylecuriosidade.css">
+
+    <style>
+      
+        #curiosity-box {
+            color: rgba(255, 255, 255, 0.951);
+            background: #a9a8a849;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            
+        }
+        button {
+            background-color: #797979;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #1cd8d2;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -33,49 +62,72 @@
     </header>
 
     <main>
-        <div class="inner-full-stack">
-            <h2>SERVICES OFFERED</h2>
+
+        <div class="conteiner-script-curiosidade">
+            <div class="inner-script-curiosidade">
+                <h1>Curiosidades sobre Tecnologia</h1>
+            <div id="curiosity-box">
+                <p id="curiosity">Clique no botão para ver uma curiosidade!</p>
+            </div>
+            <button onclick="showCuriosity()">Nova Curiosidade</button>
+                   </div>
         </div>
+
+        <!-- <div class="inner-full-stack">
+            <h2>SERVICES OFFERED</h2>
+        </div> -->
         <div class="conteiner-geral">
             
             <div class="visao-geral">
-                 <h2>FRONTEND DEVELOPMENT</h2>
+                 <h2>📌 Curiosidades sobre tecnologia e programação</h2>
                  
-                 <p>I create modern, intuitive and responsive interfaces that guarantee a flawless user experience. Using technologies such as React, Vue.js and JavaScript, I develop dynamic pages that are compatible with all devices.</p>
-                 <p>I focus on functional design, combined with UI/UX principles, to deliver websites that not only delight visually, but also prioritize usability. In addition, I implement smooth animations, interactive effects, and performance optimization to ensure fast loading and fluid navigation. Every detail of the interface is carefully thought out to align technology and aesthetics.</p>
+                 <p>Primeira Linguagem de Programação – Sabia que a primeira linguagem de programação foi criada por Ada Lovelace no século XIX?.</p>
 
-                 <h2>BACKEND DEVELOPMENT</h2>
+                 <p>O Significado de "Full Stack" – O termo "full stack" refere-se a um desenvolvedor que trabalha tanto no frontend (interface do usuário) quanto no backend (lógica do servidor).</p>
 
-                 <p>I build the backbone of applications, ensuring that all processes that are invisible to the user run smoothly. I use Node.js, Python, and SQL/NoSQL to create robust servers, efficient APIs, and well-structured databases.</p>
-                 <p>I work with secure authentication. Each line of code is developed to maintain the performance, scalability and security of the application, allowing your idea to grow without complications. My focus is to transform business logic into intelligent technical solutions.</p>
+                 <p>O Símbolo “//” nos Comentários – Esse padrão vem da linguagem BCPL, precursora do C.</p>
 
-                 <h2>FULL STACK SOLUTIONS</h2>
+                 <h2> Curiosidades sobre Frontend </h2>
 
-                 <p>I connect the frontend to the backend, creating complete and perfectly integrated applications. From designing the interface to structuring servers and databases, I deliver products ready for the end user. I work with automated deployments (CI/CD), cloud hosting (AWS, Google Cloud) and continuous monitoring to ensure maximum efficiency.</p>
+                 <p>O primeiro site responsivo – O conceito de design responsivo começou a se popularizar com Ethan Marcotte em 2010.</p>
+
+                 <p>CSS pode fazer arte! – Com criatividade, é possível desenhar incríveis ilustrações apenas com HTML e CSS.</p>
+                 
+                 <p>O favicon tem uma história – Ele surgiu em 1999 no Internet Explorer 5 para facilitar a navegação por abas.</p>
+
+                 <h2>Curiosidades sobre Backend e Banco de Dados</h2>
+
+                 <p>O primeiro banco de dados – Criado nos anos 1960 pela IBM, chamado "Integrated Data Store".</p>
+
+                 <p>Senha mais comum do mundo – Infelizmente, "123456" ainda lidera o ranking.</p>
+                 
+                 <p>O maior banco de dados do mundo – O Google processa mais de 20 petabytes de dados por dia!</p>
                  
                  
              </div>
             
           <div class="inner-Visao-geral inner01">
-           <h4>Frontend Development:</h4>
-           <p>• Creating responsive and dynamic interfaces</p>
+           <h4>Curiosidades sobre meu trabalho:</h4>
+           <p>• Meu primeiro projeto – Uma breve história do primeiro projeto que desenvolvi</p>
+
            <p>• Use of technologies such as React, Vue.js, etc.</p>
            <p>• Focus on usability and modern design (UI/UX)</p>
 
-           <h4>BACKEND DEVELOPMENT</h4>
-           <p>• Building RESTful and GraphQL APIs</p>
-           <p>• Database integration (SQL and NoSQL)</p>
-           <p>• Authentication, authorization and security</p>
-           
-           <h4> FULL STACK DEVELOPMENT</h4>
-           <p>• Connection between frontend and backend</p>
-           <p>• Deploy and monitor applications in the cloud (AWS, Google Cloud)</p>
-           <p>• Implementation of automated tests</p>
+           <h4> Fatos divertidos e inusitados</h4>
+           <p>• Bug lendário – Em 1969, um bug fez a Apollo 11 quase abortar seu pouso na Lua!</p>
 
-           <h4>Consulting and Maintenance</h4>
-           <p>• Code analysis</p>
-           <p>• Performance optimization</p>
-           <p>• Continuous support to evolve your project</p>
+           <p>• O primeiro vírus de computador – Chamado "Creeper", foi criado em 1971 como um experimento</p>
+
+           <p>•Quanto código tem a internet? – Estima-se que só o Google tenha mais de 2 bilhões de linhas de código!</p>
+           
+           <h4> 🚀 Curiosidades sobre Performance e Otimização</h4>
+           <p>• 1 segundo pode custar milhões – Amazon descobriu que um atraso de 100ms pode reduzir as vendas em 1%.</p>
+
+           <p>• O Google usa tempo de carregamento no SEO – Sites mais rápidos têm vantagem nos resultados de busca.</p>
+
+           <p>• O maior site da web – Wikipedia tem mais de 60 milhões de páginas e cresce todos os dias.</p>
+
+           
           </div>
              
         </div>
@@ -180,5 +232,20 @@
           <p>Copyright 2025 - Alexandre Amaral - All rights reserved</p>
         </div>
      </footer>
+     <script>
+        const curiosities = [
+            "O primeiro site da web ainda está online desde 1991!",
+            "A primeira linguagem de programação foi criada por Ada Lovelace no século XIX.",
+            "JavaScript foi criado em apenas 10 dias por Brendan Eich.",
+            "O primeiro bug de computador foi um inseto real encontrado dentro de um hardware.",
+            "O Google processa mais de 8,5 bilhões de pesquisas por dia.",
+            "A senha mais comum do mundo ainda é '123456'."
+        ];
+
+        function showCuriosity() {
+            const randomIndex = Math.floor(Math.random() * curiosities.length);
+            document.getElementById("curiosity").textContent = curiosities[randomIndex];
+        }
+    </script>
 </body>
 </html>
