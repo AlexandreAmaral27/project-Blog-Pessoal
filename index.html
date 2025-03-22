@@ -95,6 +95,12 @@
         to { opacity: 1; transform: translateY(0); }
     }
 </style>
+<style>
+   
+    #google_translate_element {
+        margin-bottom: 20px;
+    }
+</style>
 </head>
 <body>
     <header>
@@ -122,6 +128,8 @@
         
 
     </header>
+    <div id="google_translate_element"></div>
+    
 
     <main>
         <div class="conteiner">
@@ -367,13 +375,32 @@
           <p>Copyright 2025 - Alexandre Amaral - All rights reserved</p>
         </div>
      </footer>
+      
+     <!-- window alert -->
      <script>
+
         window.onload = function() {
            alert("Welcome to Amaral's blog! Explore the curiosities about a Full Stack Dev. 🚀");
            };
 
          
      </script>
+     <!-- window alert -->
+    
+      <!-- tradutor google -->
+     <script type="text/javascript">
+        function googleTranslateInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', // Define o idioma padrão do site
+                includedLanguages: 'es,fr,de,pt,it,zh,ja,ru', // Idiomas disponíveis
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit"></script>
+       <!-- tradutor google -->
+
+     <!-- comentario -->
       <script>
         document.addEventListener("DOMContentLoaded", carregarComentarios);
 
@@ -438,6 +465,11 @@
             });
         }
     </script>
+     <!-- comentario -->
+
+
+
+
      
 </body>
 </html>

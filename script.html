@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Multilíngue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const translations = {
+            en: {
+                title: "Welcome to my site!",
+                description: "This is an example of a site with multilingual support."
+            },
+            pt: {
+                title: "Bem-vindo ao meu site!",
+                description: "Este é um exemplo de site com suporte a múltiplos idiomas."
+            },
+            es: {
+                title: "¡Bienvenido a mi sitio!",
+                description: "Este es un ejemplo de un sitio con soporte multilingüe."
+            },
+            fr: {
+                title: "Bienvenue sur mon site!",
+                description: "Ceci est un exemple de site avec support multilingue."
+            }
+        };
+
+        function selectLanguage() {
+            const lang = prompt("Escolha um idioma: en (Inglês), pt (Português), es (Espanhol), fr (Francês)");
+            if (translations[lang]) {
+                document.getElementById("title").textContent = translations[lang].title;
+                document.getElementById("description").textContent = translations[lang].description;
+            } else {
+                alert("Idioma não suportado, mantendo padrão em inglês.");
+            }
+        }
+        
+        window.onload = selectLanguage;
+    </script>
+    
+    <h1 id="title">Welcome to my site!</h1>
+    <p id="description">This is an example of a site with multilingual support.</p>
+</body>
+</html>
