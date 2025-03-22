@@ -7,6 +7,94 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
    <link rel="stylesheet" href="estilo/style.css">
    <link rel="stylesheet" href="estilo/mediaquiry.css">
+   <style>
+    .conteiner-comentario{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .conteiner-comentario h2 {
+        text-align: center;
+        color: #ffffff;
+    }
+    .comentarios-container {
+        width: 90%;
+        max-width: 600px;
+        background-color: #635f5f3a;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    #usuario{
+        color: white;
+        background-color: #635f5f3a;
+    }
+    #usuario::placeholder{
+        color: white;
+        
+    }
+    input, textarea {
+        width: 95.3%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        resize: none;
+    }
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #797979;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+    button:hover {
+        background-color:#1cd8d2;
+    }
+    .comentario {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        background-color: #00000000;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+    .comentario strong {
+        color:#1cd8d2;
+        margin-bottom: 5px;
+    }
+    .comentario span {
+        color: white;
+    }
+    .delete-btn {
+        align-self: flex-end;
+        background-color: #797979;
+        color: white;
+        border: none;
+        padding: 5px 8px;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: background 0.3s;
+        margin-top: 5px;
+        width: 61%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .delete-btn:hover {
+        background-color:#1cd8d2;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
 </head>
 <body>
     <header>
@@ -204,18 +292,19 @@
 
 <div class="page-inner-content">
      <h2>Comentários:</h2>
-     <fieldset>
-        <legend>💬</legend>
-     <form action="comentario.php" method="post">
-        <p>
-            <label for="imens"></label><br>
-            <textarea name="mens" id="imens" cols="50" rows="5" placeholder="Deixe o seu Comentário!"></textarea>
-        </p>
-        <p><input type="submit" value="Enviar"> <input type="reset" value="Limpar"></p>
+    <div class="conteiner-comentario">
+        
+            <div class="comentarios-container">
+                <h2>Deixe seu comentário</h2>
+                <input type="text" id="usuario" placeholder="Seu nome">
+                <textarea id="comentario" placeholder="Escreva seu comentário..."></textarea>
+                <button onclick="adicionarComentario()">Comentar</button>
+                <div id="lista-comentarios"></div>
+            </div>
+    </div>
 
 
-     </form>
-    </fieldset>
+     
     <div class="testemunhos">
         
         <div class="testemunho">
@@ -279,8 +368,76 @@
         </div>
      </footer>
      <script>
-         window.alert('Seja bem-vindo(a) ao blog do Amaral!')
+        window.onload = function() {
+           alert("Bem-vindo(a) ao blog do Amaral! Explore as curiosidades sobre um Dev Full Stack. 🚀");
+           };
+
+         
      </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", carregarComentarios);
+
+        function adicionarComentario() {
+            const usuarioNome = document.getElementById("usuario").value.trim();
+            const comentarioTexto = document.getElementById("comentario").value.trim();
+            
+            if (usuarioNome === "" || comentarioTexto === "") {
+                alert("Por favor, preencha seu nome e comentário.");
+                return;
+            }
+            
+            const comentarioElemento = criarComentario(usuarioNome, comentarioTexto);
+            document.getElementById("lista-comentarios").appendChild(comentarioElemento);
+            
+            document.getElementById("usuario").value = "";
+            document.getElementById("comentario").value = "";
+            
+            salvarComentarios();
+        }
+
+        function criarComentario(nome, texto) {
+            const comentarioElemento = document.createElement("div");
+            comentarioElemento.classList.add("comentario");
+            
+            const nomeElemento = document.createElement("strong");
+            nomeElemento.textContent = nome;
+            
+            const textoSpan = document.createElement("span");
+            textoSpan.textContent = texto;
+            
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "X";
+            deleteBtn.classList.add("delete-btn");
+            deleteBtn.onclick = function() {
+                comentarioElemento.remove();
+                salvarComentarios();
+            };
+            
+            comentarioElemento.appendChild(nomeElemento);
+            comentarioElemento.appendChild(textoSpan);
+            comentarioElemento.appendChild(deleteBtn);
+            
+            return comentarioElemento;
+        }
+
+        function salvarComentarios() {
+            const comentarios = [];
+            document.querySelectorAll(".comentario").forEach(comentario => {
+                const nome = comentario.querySelector("strong").textContent;
+                const texto = comentario.querySelector("span").textContent;
+                comentarios.push({ nome, texto });
+            });
+            localStorage.setItem("comentarios", JSON.stringify(comentarios));
+        }
+
+        function carregarComentarios() {
+            const comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+            comentarios.forEach(({ nome, texto }) => {
+                const comentarioElemento = criarComentario(nome, texto);
+                document.getElementById("lista-comentarios").appendChild(comentarioElemento);
+            });
+        }
+    </script>
      
 </body>
 </html>

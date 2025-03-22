@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="estilo/style.css">
     <link rel="stylesheet" href="estilo/mediaquiry.css">
     <link rel="stylesheet" href="estilo/stylecuriosidade.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
       
@@ -82,7 +83,7 @@
             margin-top: 20px;
             padding: 12px 25px;
             font-size: 1.2em;
-            background: #ff9800;
+            background-color: gray;
             border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -90,8 +91,407 @@
             transition: background 0.3s, transform 0.2s;
         }
         button:hover {
-            background: #e68900;
+            background:#1cd8d2;
             transform: scale(1.05);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    width: 5px;
+    background: white;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.timeline-event {
+    position: relative;
+    width: 45%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 40px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-in-out;
+}
+
+.timeline-event.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-event:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-event:nth-child(even) {
+    left: 55%;
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #1cd8d2; 
+    border-radius: 50%;
+    top: 20px;
+    left: 100%;
+    transform: translateX(-50%);
+    border: 3px solid white;
+}
+
+.timeline-event:nth-child(even)::before {
+    left: -20px;
+}
+
+.timeline-event h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.timeline-event p {
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 10px;
+    }
+
+    .timeline-event {
+        width: 90%;
+        left: 5% !important;
+    }
+
+    .timeline-event::before {
+        left: -30px !important;
+    }
+}
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+     
+
+     
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .comparison-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .comparison {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        .comparison img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .before {
+            width: 50%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 6px;
+            background: #434242c1;
+            cursor: ew-resize;
+            border-radius: 3px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .slider:hover {
+            background-color: #1cd8d2;
+            transform: scaleX(1.5);
+        }
+
+        .label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .reset-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background: #a9a8a849;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .reset-btn:hover {
+            background-color: #1cd8d2;
+        }
+
+        @media (max-width: 768px) {
+            .comparison {
+                height: 250px;
+            }
+
+            .label {
+                font-size: 0.8em;
+                padding: 3px 7px;
+            }
+
+            .slider {
+                width: 4px;
+            }
+        }
+    </style>
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+      
+      
+
+        :root {
+            --bg-color: #1E3C72;
+            --text-color: white;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --button-bg: #ff9800;
+            --button-hover: #e68900;
+        }
+
+        .light-mode {
+            --bg-color: #f4f4f4;
+            --text-color: black;
+            --card-bg: rgba(0, 0, 0, 0.1);
+            --button-bg: #007BFF;
+            --button-hover: #0056b3;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background: var(--button-bg);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--button-hover);
+        }
+
+        .quiz {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .quiz-question {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            transition: opacity 0.3s;
+        }
+
+        .quiz-options {
+            display: block;
+            list-style: none;
+            padding: 0;
+        }
+
+        .quiz-options li {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .quiz-options li:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .correct {
+            background: #4CAF50 !important;
+        }
+
+        .wrong {
+            background: #E74C3C !important;
+            animation: shake 0.3s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+
+        .correct-answer {
+            background: #2ECC71 !important;
+            animation: blink 0.6s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        .score {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .toggle-mode {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--button-bg);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .toggle-mode:hover {
+            background: var(--button-hover);
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+
+        :root {
+            --bg-color: #1E3C72;
+            --text-color: white;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --button-bg: #ff9800;
+            --button-hover: #e68900;
+        }
+
+        .light-mode {
+            --bg-color: #f4f4f4;
+            --text-color: black;
+            --card-bg: rgba(0, 0, 0, 0.1);
+            --button-bg: #007BFF;
+            --button-hover: #0056b3;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        canvas {
+            margin-top: 20px;
+            max-width: 100%;
+        }
+
+        .toggle-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background: var(--button-bg);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+        }
+        
+        .toggle-btn:hover {
+            background: var(--button-hover);
+        }
+
+        .info-box {
+            max-width: 800px;
+            margin: 30px auto;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: left;
         }
     </style>
 </head>
@@ -131,9 +531,7 @@
                    </div>
         </div>
 
-        <!-- <div class="inner-full-stack">
-            <h2>SERVICES OFFERED</h2>
-        </div> -->
+
         <div class="conteiner-geral">
             
             <div class="visao-geral">
@@ -203,64 +601,88 @@
             <button onclick="addCuriosity()">Adicionar Curiosidade</button>
         </div>
 
-        <div class="inner-full-stack">
-            <h2>WORK PROCESS</h2>
+        <div class="container-teste">
+            <h1>🕹 Quiz de Tecnologia</h1>
+
+        <div class="container quiz">
+        <h2>🧠 Teste seus conhecimentos!</h2>
+        <p class="quiz-question">Carregando pergunta...</p>
+        <ul class="quiz-options"></ul>
+        <p class="score">Pontuação: <span id="score">0</span></p>
         </div>
+
+    <!-- Sons -->
+    <audio id="correct-sound" src="https://www.myinstants.com/media/sounds/correct.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.myinstants.com/media/sounds/fail-trombone.mp3"></audio>
+        </div>
+        
         <div class="conteiner-geral">
             
-            <div class="visao-geral">
-                 <h2>INITIAL CONSULTATION</h2>
+            <div class="conteiner-evolusion">
+                 <h2 id="titulo1">Evolução da Tecnologia</h2>
                  
-                 <p>It all starts with a conversation! At this stage, I listen to your ideas, goals, and needs. We discuss the desired features, target audience, and expected results. The focus is on understanding your vision so that each technical decision is aligned with the project's purpose.</p>
-                 
-
-                 <h2>PLANNING AND STRUCTURING</h2>
-
-                 <p>Based on the information gathered, I develop a clear plan, defining the technologies that will be used, the deadlines and the development stages. We create a skeleton of the project, including wireframes (for the frontend) and the database model (for the backend).</p>
-                 
-
-                 <h2>DEVELOPMENT</h2>
-
-                 <p>Let’s get to work! Here, the frontend comes to life with responsive and dynamic interfaces, while the backend is structured with APIs, databases and business logic. Development is done iteratively, allowing for constant adjustments.</p>
-                 
-                 <h2>TESTS AND REVIEWS</h2>
-
-                 <p>Before launching, I perform rigorous testing: I check for bugs, performance, responsiveness and security. I test each feature, ensuring that the application works perfectly on different devices and browsers.</p>
+            
+                <section class="timeline">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-container" id="timeline-container">
+                        <!-- Eventos adicionados via JS -->
+                    </div>
+                </section>
                  
 
-                 <h2>Deploy and Delivery</h2>
-
-                 <p>Once everything is validated, I deploy the application — whether on cloud servers such as AWS, Google Cloud or another chosen service. I also set up monitoring and maintenance, ensuring that everything runs stably and securely.</p>
+                 
                  
                  
              </div>
             
-          <div class="inner-Visao-geral inner01">
-            <h4>CONSULTANCY</h4>
-           <p>• We start with a conversation to understand your ideas, goals, and target audience. This step is essential to align expectations and define the scope of the project. The focus is on transforming your vision into a clear, strategic plan.</p>
-           
-           <h4>DEFINITION AND ORGANIZATION</h4>
           
-           <p>• With the information collected, I define the technologies, deadlines and stages of the project. We create wireframes for the frontend and sketch out the backend architecture. Everything is organized to ensure efficient development aligned with your objective.</p>
-           
-           <h4>IMPLEMENTATION AND CONSTRUCTION</h4>
-           <p>•Nesta etapa, o projeto começa a tomar forma! Crio as interfaces interativas no frontend, implemento a lógica de negócios no backend e integro bancos de dados. Tudo é desenvolvido com foco em desempenho, funcionalidade e escalabilidade.</p>
-           
-           <h4>VALIDATION AND ADJUSTMENTS</h4>
-           <p>• I perform thorough testing to identify bugs, check responsiveness and ensure application security. I evaluate performance across different devices and browsers. Every detail is fine-tuned to ensure everything runs smoothly and efficiently.</p>
-
-           <h4>PUBLICATION AND LAUNCH</h4>
-           <p>• Chegou a hora de colocar o projeto no ar! Realizo o deploy em servidores seguros ou serviços de nuvem como AWS, Google Cloud ou outro de sua escolha. Configuro automações, monitoramento e backups para garantir a estabilidade da aplicação. Após a publicação, faço testes finais em ambiente real. O resultado é um produto funcional, seguro e pronto para o público. 🚀</p>
-
-           
-          </div>
              
         </div>
 
-       
+     <div class="container-estatistica">
+        <h1>📊 Estatísticas e Dados Inusitados</h1>
 
-        
-        
+    <div class="container">
+        <h2>Uso de Linguagens de Programação</h2>
+        <canvas id="chartLanguages"></canvas>
+    </div>
+
+    <div class="container">
+        <h2>Crescimento da Internet</h2>
+        <canvas id="chartInternet"></canvas>
+    </div>
+
+     </div>  
+
+        <div class="container-antes-e-depois">
+            <div class="inner-antes-e-depois">
+                <h1>Blog Antes e Depois</h1>
+                    <div class="comparison-container">
+                <div class="comparison">
+                    <div class="before">
+                        <img src="" alt="Google 1998">
+                    </div>
+                    <img src="imagens/full/google antes e depois.jpg">
+                    <div class="slider"></div>
+                    <div class="label">blog.Amaral</div>
+                </div>
+                    </div>
+                
+                    <!-- <div class="comparison-container">
+                <div class="comparison">
+                    <div class="before">
+                        <img src="" alt="Facebook 2004">
+                    </div>
+                    <img src="" alt="Facebook 2024">
+                    <div class="slider"></div>
+                    <div class="label">Facebook 2004</div>
+                </div>
+                    </div> -->
+                
+                    <button class="reset-btn" onclick="resetSliders()">Resetar Sliders</button>
+                
+            </div>
+        </div>
     
 
        
@@ -398,5 +820,188 @@
     
     displayCuriosities();
     </script>
+
+<script>
+    const events = [
+        { year: 1991, tech: "HTML 1.0", description: "Primeira versão do HTML lançada." },
+        { year: 1995, tech: "JavaScript", description: "Netscape cria JavaScript para páginas interativas." },
+        { year: 1996, tech: "CSS 1", description: "Primeira versão do CSS para estilização web." },
+        { year: 2000, tech: "PHP 4 & ASP", description: "Popularização do PHP e ASP para back-end dinâmico." },
+        { year: 2005, tech: "AJAX", description: "Mudança na web com carregamento assíncrono." },
+        { year: 2009, tech: "Node.js", description: "JavaScript chega ao backend com alta performance." },
+        { year: 2010, tech: "HTML5 & CSS3", description: "HTML5 e CSS3 revolucionam com novos elementos." },
+        { year: 2013, tech: "React.js", description: "Facebook lança React.js para componentes dinâmicos." },
+        { year: 2015, tech: "ES6 & Vue.js", description: "Nova versão do JavaScript e crescimento do Vue.js." },
+        { year: 2023, tech: "AI e Automação", description: "IA começa a gerar código e otimizar desenvolvimento." }
+    ];
+
+    const timelineContainer = document.getElementById("timeline-container");
+
+    events.forEach((event, index) => {
+        const eventElement = document.createElement("div");
+        eventElement.classList.add("timeline-event");
+        eventElement.innerHTML = `<h2>${event.year} - ${event.tech}</h2><p>${event.description}</p>`;
+        
+        if (index % 2 === 0) {
+            eventElement.style.left = "0";
+        } else {
+            eventElement.style.left = "55%";
+        }
+
+        timelineContainer.appendChild(eventElement);
+    });
+
+    // Animação ao rolar a página
+    function revealTimeline() {
+        const elements = document.querySelectorAll(".timeline-event");
+        const windowHeight = window.innerHeight;
+
+        elements.forEach(element => {
+            const position = element.getBoundingClientRect().top;
+            if (position < windowHeight - 100) {
+                element.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealTimeline);
+    revealTimeline();
+</script>
+<script>
+    document.querySelectorAll('.comparison').forEach(comparison => {
+        const before = comparison.querySelector('.before');
+        const slider = comparison.querySelector('.slider');
+
+        let isMouseDown = false;
+
+        function moveSlider(e) {
+            if (!isMouseDown) return;
+            let rect = comparison.getBoundingClientRect();
+            let offsetX = e.clientX - rect.left;
+            let width = rect.width;
+            let percent = (offsetX / width) * 100;
+            if (percent < 10) percent = 10;
+            if (percent > 90) percent = 90;
+            before.style.width = percent + "%";
+            slider.style.left = percent + "%";
+        }
+
+        slider.addEventListener('mousedown', () => isMouseDown = true);
+        window.addEventListener('mouseup', () => isMouseDown = false);
+        window.addEventListener('mousemove', moveSlider);
+    });
+
+    function resetSliders() {
+        document.querySelectorAll('.comparison').forEach(comparison => {
+            const before = comparison.querySelector('.before');
+            const slider = comparison.querySelector('.slider');
+            before.style.width = "50%";
+            slider.style.left = "50%";
+        });
+    }
+</script>
+<script>
+    let score = 0;
+    let answering = true;
+    let questions = [
+        { question: "Qual foi a primeira linguagem de programação?", options: ["Java", "Python", "Fortran", "C++"], answer: "Fortran" },
+        { question: "Quem criou o JavaScript?", options: ["Brendan Eich", "Dennis Ritchie", "Bjarne Stroustrup", "Guido van Rossum"], answer: "Brendan Eich" },
+        { question: "O que significa HTML?", options: ["Hyper Text Markup Language", "High Technology Modern Language", "Home Tool Machine Learning", "Hyperlink Text Management Language"], answer: "Hyper Text Markup Language" },
+        { question: "Qual empresa criou o React?", options: ["Google", "Facebook", "Microsoft", "Apple"], answer: "Facebook" },
+        { question: "Qual dessas tecnologias é usada para backend?", options: ["React", "Vue.js", "Node.js", "CSS"], answer: "Node.js" },
+        // Adicionando mais 95 perguntas...
+    ];
+
+    function loadQuiz() {
+        answering = true;
+        let randomIndex = Math.floor(Math.random() * questions.length);
+        let questionData = questions[randomIndex];
+
+        document.querySelector(".quiz-question").innerText = questionData.question;
+        const optionsList = document.querySelector(".quiz-options");
+        optionsList.innerHTML = "";
+
+        questionData.options.forEach(option => {
+            let li = document.createElement("li");
+            li.innerText = option;
+            li.onclick = () => checkAnswer(li, option, questionData.answer);
+            optionsList.appendChild(li);
+        });
+    }
+
+    function checkAnswer(element, selectedOption, correctAnswer) {
+        if (!answering) return;
+        answering = false;
+
+        const options = document.querySelectorAll(".quiz-options li");
+        options.forEach(option => option.onclick = null);
+
+        if (selectedOption === correctAnswer) {
+            element.classList.add("correct");
+            document.getElementById("correct-sound").play();
+            score++;
+        } else {
+            element.classList.add("wrong");
+            document.getElementById("wrong-sound").play();
+            options.forEach(opt => {
+                if (opt.innerText === correctAnswer) {
+                    opt.classList.add("correct-answer");
+                }
+            });
+        }
+
+        document.getElementById("score").innerText = score;
+        setTimeout(loadQuiz, 3000);
+    }
+
+    function toggleMode() {
+        document.body.classList.toggle("light-mode");
+    }
+
+    loadQuiz();
+</script>
+<script>
+    function toggleMode() {
+        document.body.classList.toggle('light-mode');
+    }
+
+    function animateChart(ctx, chartType, labels, data, bgColor, borderColor) {
+        return new Chart(ctx, {
+            type: chartType,
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Dados Estatísticos',
+                    data: data,
+                    backgroundColor: bgColor,
+                    borderColor: borderColor,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 2000,
+                    easing: 'easeOutBounce'
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    }
+
+    animateChart(document.getElementById('chartLanguages').getContext('2d'), 'bar',
+        ['JavaScript', 'Python', 'Java', 'C#', 'PHP'], [69, 44, 35, 31, 26],
+        ['#f1c40f', '#3498db', '#e74c3c', '#2ecc71', '#9b59b6'],
+        ['#f39c12', '#2980b9', '#c0392b', '#27ae60', '#8e44ad']
+    );
+
+    animateChart(document.getElementById('chartInternet').getContext('2d'), 'line',
+        ['1995', '2000', '2005', '2010', '2015', '2020'], [0.03, 0.36, 1.02, 2.03, 3.18, 4.57],
+        ['rgba(255, 152, 0, 0.5)'],
+        ['#ff9800']
+    );
+</script>
 </body>
 </html>
