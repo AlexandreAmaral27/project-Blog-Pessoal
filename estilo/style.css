@@ -138,6 +138,9 @@ ul li a:hover:before,ul li a:hover {
 .img-menu{
     display: none;
 }
+.menu02 img:hover{
+   color: #1cd8d2;
+}
 main{
     color: white;
        

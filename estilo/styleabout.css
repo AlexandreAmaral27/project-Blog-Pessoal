@@ -42,6 +42,12 @@
    
    
 }
+.paragrafo01 p{
+    background-color: rgba(142, 137, 137, 0.095);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 2px 1px #00000012;
+}
 
 .perfil{
     display: block;

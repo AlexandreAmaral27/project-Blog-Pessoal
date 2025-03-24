@@ -9,13 +9,21 @@
    <link rel="stylesheet" href="estilo/mediaquiry.css">
    <link rel="stylesheet" href="estilo/styleabout.css">
    <link rel="stylesheet" href="estilo/mediaquiryabout.css">
+   <style>
+   
+    #google_translate_element {
+        margin-bottom: 20px;
+        text-align: right;
+    }
+    
+</style>
    
 </head>
 <body>
     <header>
         <h2>Blog.Pessoal</h2>
         <h1 id="h1amaral">Alexandre P . S Amaral</h1>
-
+        <div id="google_translate_element"></div>
         <div class="conteiner-titular">
             <ul class="menu02">
                 <li><a href="index.html"><span class="material-icons">home</span><span class="linha">Home</span></a></li>
@@ -45,9 +53,9 @@
                          </div>
                     
                         <div id="paragrafo">
-                            <p><span class="material-icons">call</span><span class="linha">+244 929-764-090</span></p>
-                            <p><span class="material-icons">mail</span><span class="linha">amaralalexandre327@gmail.com</span></p>
-                            <p><span class="material-icons">location_on</span><span class="linha">Viana-Porto Seco</span></p>
+                            <p><img src="imagens/full/phone.png" alt=""><span class="linha">+244 929-764-090</span></p>
+                            <p><img src="imagens/full/email.png" alt=""><span class="linha">amaralalexandre327@gmail.com</span></p>
+                            <p><img src="imagens/full/localizac.png" alt=""><span class="linha">Viana-Porto Seco</span></p>
                         </div>
                     <div class="paragrafo01">
                         <p>Hello, Alexandre Pedro Simões do Amaral, I am Angolan (🇦🇴), born in Angola-Luanda (Ingombotas), I live with my parents and brother and I work with the internet. In short, being Angolan is a privilege, as it is being part of a country with a rich culture, and a history of struggle and overcoming. The way of life in Angola reflects the strength of the community, but also a vision of the future.</p>
@@ -313,6 +321,19 @@
           <p>Copyright 2025 - Alexandre Amaral - All rights reserved</p>
         </div>
      </footer>
+
+     <!-- tradutor google -->
+     <script type="text/javascript">
+        function googleTranslateInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', // Define o idioma padrão do site
+                includedLanguages: 'pt', // Idiomas disponíveis
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit"></script>
+       <!-- tradutor google -->
     
 </body>
 </html>

@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="estilo/mediaquiry.css">
     <link rel="stylesheet" href="estilo/stylecuriosidade.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+   
+        #google_translate_element {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        
+    </style>
 
     <style>
       
@@ -499,7 +507,7 @@
     <header>
         <h2>Blog.Pessoal</h2>
         <h1 id="h1amaral">Alexandre P . S Amaral</h1>
-
+        <div id="google_translate_element"></div>
         <div class="conteiner-titular">
             <ul class="menu02">
                 <li><a href="index.html"><span class="material-icons">home</span><span class="linha">Home</span></a></li>
@@ -1005,5 +1013,17 @@
         ['#ff9800']
     );
     </script>
+    <!-- tradutor google -->
+    <script type="text/javascript">
+        function googleTranslateInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', // Define o idioma padrão do site
+                includedLanguages: 'pt', // Idiomas disponíveis
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit"></script>
+       <!-- tradutor google -->
 </body>
 </html>

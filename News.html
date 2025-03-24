@@ -7,12 +7,20 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="estilo/style.css">
     <link rel="stylesheet" href="estilo/mediaquiry.css">
+    <style>
+   
+        #google_translate_element {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        
+    </style>
 </head>
 <body>
     <header>
         <h2>Blog.Pessoal</h2>
         <h1 id="h1amaral">Alexandre P . S Amaral</h1>
-
+        <div id="google_translate_element"></div>
         <div class="conteiner-titular">
             <ul class="menu02">
                 <li><a href="index.html"><span class="material-icons">home</span><span class="linha">Home</span></a></li>
@@ -69,5 +77,17 @@
           <p>Copyright 2025 - Alexandre Amaral - All rights reserved</p>
         </div>
      </footer>
+     <!-- tradutor google -->
+     <script type="text/javascript">
+        function googleTranslateInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', // Define o idioma padrão do site
+                includedLanguages: 'pt', // Idiomas disponíveis
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit"></script>
+       <!-- tradutor google -->
 </body>
 </html>
