@@ -230,6 +230,9 @@
         .conteiner-flex{
             display: flex;
         }
+        .conteiner-flex p{
+            padding-right: 8px;
+        }
 
         .conteiner-flex img{
             width: 150px;
@@ -345,9 +348,10 @@
             <button class="tab-button" onclick="filterNews('Business')">Negócios</button>
             <button class="tab-button" onclick="filterNews('AI')">Inteligência Artificial</button>
         </div>
-        <div class="news-container" id="news-container"></div>
+        
+        
     </div>
-    
+    <div class="news-container" id="news-container"></div>
         <div id="news-details" class="news-details">
         <button class="close-button" onclick="closeNews()">Fechar</button>
         <h2 id="news-title"></h2>
@@ -542,7 +546,7 @@
                 title: `Notícia ${i}`,
                 category: i % 3 === 0 ? 'Tech' : i % 2 === 0 ? 'Business' : 'AI',
                 image: `https://source.unsplash.com/300x200/?news,${i}`,
-                content: `Conteúdo completo da notícia ${i}. Aqui estão todos os detalhes e informações relevantes sobre o assunto.`
+                content: `Conteúdo completo da notícia ${i}`
             });
         }
 
