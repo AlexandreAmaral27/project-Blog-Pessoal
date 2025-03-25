@@ -269,7 +269,7 @@
         
     </style>
    
-    <!--  -->
+    <!--Notícias-Tech  -->
     <style>
     :root {
         --bg-color: #121212;
@@ -400,7 +400,7 @@
         100% { opacity: 1; }
     }
     </style>
-    <!--  -->
+    <!--Notícias-Tech  -->
 
 </head>
 <body>
@@ -431,51 +431,51 @@
     <main>
         <div>
             <div >
-                <h2>🖥️ Notícias Tech</h2>
+                <h2>🖥️ TECHNOLOGY NEWS</h2>
                 <ul class="conteiner-Notícias-Tech">
-                    <li><a href="newsaboutme.html" target="_blank"><span class="material-icons notranslate">person</span><span class="linha">Sobre Mim</span></a></li>
-                    <li><a href="login.html" target="_blank"><span class="material-icons notranslate">lock</span><span class="linha">login</span></a></li>
+                    <li><a href="newsaboutme.html" target="_blank"><span class="material-icons notranslate">person</span><span class="linha">About Me</span></a></li>
+                    <li><a href="Login.html" target="_blank"><span class="material-icons notranslate">lock</span><span class="linha">Login</span></a></li>
                    
                 </ul>
                 <button class="toggle-mode" onclick="toggleMode()"></button>
             </div>
             
             <div class="news-container">
-                <input type="text" class="search-bar" id="searchInput" placeholder="🔍 Buscar notícias..." oninput="searchNews()">
+                <input type="text" class="search-bar" id="searchInput" placeholder="🔍 Search for news..." oninput="searchNews()">
                 <div id="newsList"></div>
-                <button class="load-more" onclick="loadMoreNews()">Carregar Mais</button>
+                <button class="load-more" onclick="loadMoreNews()">Load More</button>
             </div>
         </div>
         
         <div class="container">
-            <h2>Destaques</h2>
+            <h2>Highlights</h2>
             <div class="carousel">
                 <div class="slides" id="slides">
                     <div class="slide">
                         <img src="imagens/destaques/destaq-1.webp" alt="Destaque 1">
-                        <div class="overlay">Código em Ação </div>
+                        <div class="overlay">Code in Action</div>
                     </div>
                     <div class="slide">
                         <img src="imagens/destaques/destaq-2.webp" alt="Destaque 2">
-                        <div class="overlay">IA no Full Stack </div>
+                        <div class="overlay">AI in Full Stack </div>
                     </div>
                     <div class="slide">
                         <img src="imagens/destaques/destaq-3.webp" alt="Destaque 3">
-                        <div class="overlay">Arquitetura Full Stack</div>
+                        <div class="overlay">Full Stack Architecture</div>
                     </div>
                     <div class="slide">
                         <img src="imagens/destaques/destaq-4.webp" alt="Destaque 4">
-                        <div class="overlay">Infraestrutura Digital</div>
+                        <div class="overlay">Digital Infrastructure</div>
                     </div>
                     <div class="slide">
                         <img src="imagens/destaques/destaq-5.webp" alt="Destaque 5">
-                        <div class="overlay">Desenvolvedor Multitarefa</div>
+                        <div class="overlay">Multitasking Developer</div>
                     </div>
                 </div>
             </div>
             <div class="buttons">
-                <button onclick="prevSlide()">&#10094; Anterior</button>
-                <button onclick="nextSlide()">Próximo &#10095;</button>
+                <button onclick="prevSlide()">&#10094; Previous</button>
+                <button onclick="nextSlide()">Next &#10095;</button>
             </div>
             <div class="indicators" id="indicators"></div>
         </div>
@@ -558,7 +558,7 @@
           
 
           <div class="logo-footer">
-              <h2 class="logo">Blog.Pessoal</h2>
+              <h2 class="logo">Personal.Blog</h2>
               <p>The objective of my Blog is to create a space to share content that adds value to the target audience, addressing topics of interest aligned with my identity or needs, and in the future to open my virtual store and be an agile instrument for buying and selling products or services, carried out through a digital environment (internet), and one of the bases of today's commerce.</p>
           </div>
           
@@ -818,8 +818,8 @@
             for (let i = 1; i <= 54; i++) {
                 let category = categories[Math.floor(Math.random() * categories.length)];
                 fakeNews.push({
-                    title: `${category} - Novidade ${i}`,
-                    description: `Descubra o que há de novo no mundo ${category}!`,
+                    title: `${category} - News ${i}`,
+                    description: `Discover what's new in the world ${category}!`,
                     link: "#"
                 });
             }
