@@ -268,8 +268,9 @@
         }
         
     </style>
-
-<style>
+   
+    <!--  -->
+    <style>
     :root {
         --bg-color: #121212;
         --text-color: #ffffff;
@@ -348,7 +349,7 @@
     .news-link {
         display: inline-block;
         text-decoration: none;
-        color: var(--primary-color);
+        color: #1cd8d2ee;
         font-size: 14px;
         transition: 0.3s;
     }
@@ -363,13 +364,13 @@
         right: 10px;
         cursor: pointer;
         font-size: 18px;
-        color: var(--primary-color);
+        color: #1cd8d2d5;
         background: none;
         border: none;
     }
 
     .load-more {
-        background: var(--primary-color);
+        background: #1cd8d2d5;
         padding: 10px;
         color: white;
         border: none;
@@ -382,6 +383,8 @@
 
     .load-more:hover {
         opacity: 0.8;
+        
+        background-color: #1cd8d2cf;
     }
 
     .skeleton {
@@ -396,7 +399,8 @@
         0% { opacity: 0.5; }
         100% { opacity: 1; }
     }
-</style>
+    </style>
+    <!--  -->
 
 </head>
 <body>
@@ -429,8 +433,9 @@
             <div >
                 <h2>🖥️ Notícias Tech</h2>
                 <ul class="conteiner-Notícias-Tech">
-                    <li><a href="newsaboutme.html" target="_blank">👨‍💻 Sobre Mim</a></li>
-                    <li><a href="login.html" target="_blank">🔐login</a></li>
+                    <li><a href="newsaboutme.html" target="_blank"><span class="material-icons notranslate">person</span><span class="linha">Sobre Mim</span></a></li>
+                    <li><a href="login.html" target="_blank"><span class="material-icons notranslate">lock</span><span class="linha">login</span></a></li>
+                   
                 </ul>
                 <button class="toggle-mode" onclick="toggleMode()"></button>
             </div>
