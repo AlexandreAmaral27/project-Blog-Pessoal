@@ -184,7 +184,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 80%;
-            
+            height: 90vh;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
             text-align: left;
@@ -217,41 +217,24 @@
     <!-- partilhar -->
     
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+        
         .news {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin-bottom: 20px;
+            
+            
+            margin-bottom: 10px;
         }
-        .comment-section {
-            margin-top: 10px;
+        .inner-news button{
+            padding: 8px 16px;
         }
-        .comment {
-            background: #f9f9f9;
-            padding: 5px;
-            border-left: 3px solid #007BFF;
-            margin-bottom: 5px;
+       
+        .conteiner-flex{
             display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
-        .delete-btn {
-            background: red;
-            color: white;
-            border: none;
-            padding: 2px 5px;
-            cursor: pointer;
+
+        .conteiner-flex img{
+            width: 150px;
         }
-        .comment-input {
-            width: 80%;
-            padding: 5px;
-        }
-        .comment button {
-            margin-left: 10px;
-        }
+        
         .share-buttons {
             margin-top: 10px;
         }
@@ -371,29 +354,41 @@
         <img id="news-image" src="" alt="">
         <p id="news-content"></p>
 
+        <div class="conteiner-flex">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptas quasi corrupti perspiciatis, consectetur ratione exercitationem voluptate adipisci. Repellendus quam necessitatibus rerum quo. Magnam itaque nam quod consequuntur qui quas.
+            </p>
+            
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut pariatur aliquid neque minus, possimus sed ullam alias error odio repudiandae laboriosam aspernatur expedita sunt nulla et dolore repellat. Blanditiis, explicabo.
+            </p>
+            
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptas quasi corrupti perspiciatis, consectetur ratione exercitationem voluptate adipisci. Repellendus quam necessitatibus rerum quo. Magnam itaque nam quod consequuntur qui quas.
+            </p>
+            <img src="imagens/logo-facebook.jpg" alt="">
+        </div>
+
         
     
         <div class="news" id="news-1">
-            <h2>Partilhar</h2>
-           
-            <button onclick="likeNews(1)">Curtir</button> <span id="likes-1">0</span> curtidas
-            <div class="share-buttons">
-                <a href="#" class="whatsapp" onclick="shareNews(1, 'whatsapp')">WhatsApp</a>
-                <a href="#" class="twitter" onclick="shareNews(1, 'twitter')">Twitter</a>
-                <a href="#" class="facebook" onclick="shareNews(1, 'facebook')">Facebook</a>
-            </div>
-            <div class="comment-section">
-                <h3>Comentários</h3>
-                <div class="comments" id="comments-1"></div>
-                <input type="text" class="comment-input" id="comment-input-1" placeholder="Adicione um comentário">
-                <button onclick="addComment(1)">Comentar</button>
+            <div class="inner-news">
+                <hr>
+                <h4>Partilhar</h4>
+                <button onclick="likeNews(1)">Curtir</button> <span id="likes-1">0</span> curtidas
+                <div class="share-buttons">
+                    <a href="#" class="whatsapp" onclick="shareNews(1, 'whatsapp')">WhatsApp</a>
+                    <a href="#" class="twitter" onclick="shareNews(1, 'twitter')">Twitter</a>
+                    <a href="#" class="facebook" onclick="shareNews(1, 'facebook')">Facebook</a>
+                </div>
+               
             </div>
         </div>
     
         
         </div>
 
-        </div>
+        
     
     </main>
 
