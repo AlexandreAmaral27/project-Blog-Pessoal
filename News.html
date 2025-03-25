@@ -269,6 +269,135 @@
         
     </style>
 
+<style>
+    :root {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --card-bg: #1e1e1e;
+        --primary-color: #ffcc00;
+    }
+
+    body.light-mode {
+        --bg-color: #ffffff;
+        --text-color: #000000;
+        --card-bg: #f4f4f4;
+        --primary-color: #6200ea;
+    }
+
+    .conteiner-Notícias-Tech {
+        background-color: #00000000;
+        text-align: right;
+        justify-content: right;
+    }
+
+    .toggle-mode {
+        cursor: pointer;
+        font-size: 18px;
+        padding: 10px;
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        transition: 0.3s;
+    }
+
+    .news-container {
+        display: block;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .search-bar {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background: var(--card-bg);
+        color: var(--text-color);
+        outline: none;
+        margin-bottom: 20px;
+    }
+
+    .news-item {
+        background: var(--card-bg);
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, background 0.3s ease;
+        position: relative;
+    }
+
+    .news-item:hover {
+        transform: scale(1.02);
+    }
+
+    .news-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .news-description {
+        font-size: 14px;
+        color: var(--text-color);
+        margin-bottom: 10px;
+    }
+
+    .news-link {
+        display: inline-block;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .news-link:hover {
+        text-decoration: underline;
+    }
+
+    .favorite-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        color: var(--primary-color);
+        background: none;
+        border: none;
+    }
+
+    .load-more {
+        background: var(--primary-color);
+        padding: 10px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: 0.3s;
+    }
+
+    .load-more:hover {
+        opacity: 0.8;
+    }
+
+    .skeleton {
+        background: #333;
+        height: 100px;
+        margin: 10px 0;
+        border-radius: 10px;
+        animation: loading 1.5s infinite alternate;
+    }
+
+    @keyframes loading {
+        0% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+</style>
+
 </head>
 <body>
     <header>
@@ -296,6 +425,22 @@
 
     </header>
     <main>
+        <div>
+            <div >
+                <h2>🖥️ Notícias Tech</h2>
+                <ul class="conteiner-Notícias-Tech">
+                    <li><a href="newsaboutme.html" target="_blank">👨‍💻 Sobre Mim</a></li>
+                    <li><a href="login.html" target="_blank">🔐login</a></li>
+                </ul>
+                <button class="toggle-mode" onclick="toggleMode()"></button>
+            </div>
+            
+            <div class="news-container">
+                <input type="text" class="search-bar" id="searchInput" placeholder="🔍 Buscar notícias..." oninput="searchNews()">
+                <div id="newsList"></div>
+                <button class="load-more" onclick="loadMoreNews()">Carregar Mais</button>
+            </div>
+        </div>
         
         <div class="container">
             <h2>Destaques</h2>
@@ -330,15 +475,13 @@
             <div class="indicators" id="indicators"></div>
         </div>
 
-        <div class="conteiner-news">
+        <!-- <div class="conteiner-news">
             
     <h1>Últimas Notícias</h1>
     
     
     <div class="menu">
         <button onclick="showContent('news')">Notícias</button>
-        <button onclick="showContent('login')">Login</button>
-        <button onclick="showContent('register')">Cadastro</button>
     </div>
 
     <div id="news-section">
@@ -349,9 +492,9 @@
             <button class="tab-button" onclick="filterNews('AI')">Inteligência Artificial</button>
         </div>
         
-        
+        <div class="news-container" id="news-container"></div>
     </div>
-    <div class="news-container" id="news-container"></div>
+    
         <div id="news-details" class="news-details">
         <button class="close-button" onclick="closeNews()">Fechar</button>
         <h2 id="news-title"></h2>
@@ -392,7 +535,7 @@
         
         </div>
 
-        
+        </div> -->
     
     </main>
 
@@ -480,8 +623,8 @@
     </script>
     <!-- destaques -->
 
-    <!--aba news-->
-    <script>
+    <!--#aba news-->
+    <!-- <script>
         const NewsData = [];
         for (let i = 1; i <= 43; i++) {
             newsData.push({
@@ -588,8 +731,8 @@
         }
         
         renderNews();
-    </script>
-    <!--aba news-->
+    </script> -->
+    <!--#aba news-->
     
 <!--partilhar-->
     <script>
@@ -658,5 +801,83 @@
     </script>
 
     <!--partilhar-->
+
+    <script>
+        let newsData = [];
+        let displayedNews = 4;
+        let favoriteNews = new Set();
+
+        function generateNews() {
+            const categories = ["Full Stack", "Backend", "Frontend", "Inteligência Artificial", "DevOps"];
+            const fakeNews = [];
+            for (let i = 1; i <= 54; i++) {
+                let category = categories[Math.floor(Math.random() * categories.length)];
+                fakeNews.push({
+                    title: `${category} - Novidade ${i}`,
+                    description: `Descubra o que há de novo no mundo ${category}!`,
+                    link: "#"
+                });
+            }
+            return fakeNews;
+        }
+
+        function fetchNews() {
+            document.getElementById("newsList").innerHTML = '<div class="skeleton"></div>'.repeat(4);
+            setTimeout(() => {
+                newsData = generateNews();
+                displayNews();
+            }, 1500);
+        }
+
+        function displayNews() {
+            const newsList = document.getElementById("newsList");
+            newsList.innerHTML = "";
+            for (let i = 0; i < displayedNews; i++) {
+                if (newsData[i]) {
+                    let newsHTML = `
+                        <div class="news-item">
+                            <button class="favorite-btn" onclick="toggleFavorite(${i})">
+                                ${favoriteNews.has(i) ? "⭐" : "☆"}
+                            </button>
+                            <div class="news-title">${newsData[i].title}</div>
+                            <div class="news-description">${newsData[i].description}</div>
+                            <a href="${newsData[i].link}" class="news-link">Leia mais →</a>
+                        </div>
+                    `;
+                    newsList.innerHTML += newsHTML;
+                }
+            }
+        }
+
+        function loadMoreNews() {
+            if (displayedNews < newsData.length) {
+                displayedNews += 5;
+                displayNews();
+            }
+        }
+
+        function searchNews() {
+            let query = document.getElementById("searchInput").value.toLowerCase();
+            newsData = generateNews().filter(news => news.title.toLowerCase().includes(query));
+            displayedNews = 4;
+            displayNews();
+        }
+
+        function toggleFavorite(index) {
+            if (favoriteNews.has(index)) {
+                favoriteNews.delete(index);
+            } else {
+                favoriteNews.add(index);
+            }
+            displayNews();
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle("light-mode");
+        }
+
+        fetchNews();
+    </script>
+    
 </body>
 </html>

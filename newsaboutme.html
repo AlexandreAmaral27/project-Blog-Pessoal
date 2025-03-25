@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim - Desenvolvedor Full Stack</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --card-bg: #1e1e1e;
+            --primary-color: #ffcc00;
+            --secondary-color: #ff8800;
+            --button-hover: #ffaa00;
+        }
+
+        body.light-mode {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --card-bg: #f4f4f4;
+            --primary-color: #6200ea;
+            --secondary-color: #3700b3;
+            --button-hover: #4500b3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Arial", sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        header {
+            background: var(--card-bg);
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .toggle-mode {
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px 15px;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 5px;
+            color: #000;
+            transition: 0.3s;
+        }
+
+        .toggle-mode:hover {
+            background: var(--button-hover);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .profile img:hover {
+            transform: scale(1.1);
+        }
+
+        .bio {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .skills {
+            margin-top: 30px;
+        }
+
+        .skills h2 {
+            margin-bottom: 10px;
+        }
+
+        .skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skills li {
+            background: var(--card-bg);
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .skills li:hover {
+            background: var(--primary-color);
+            color: #000;
+        }
+
+        .timeline {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .timeline-item {
+            background: var(--card-bg);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item h3 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .timeline-item span {
+            font-size: 14px;
+            color: var(--secondary-color);
+        }
+
+        .projects {
+            margin-top: 30px;
+        }
+
+        .projects .card {
+            background: var(--card-bg);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .projects .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .social {
+            margin-top: 30px;
+        }
+
+        .social a {
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+            color: var(--primary-color);
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        👨‍💻 Sobre Mim
+        <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+    </header>
+
+    <div class="container">
+        <div class="profile">
+            <img src="https://via.placeholder.com/160" alt="Minha Foto">
+            <h2>Seu Nome</h2>
+            <p class="bio">Desenvolvedor Full Stack apaixonado por tecnologia, inovação e experiências digitais. 🚀</p>
+        </div>
+
+        <div class="skills">
+            <h2>💡 Habilidades e Tecnologias</h2>
+            <ul>
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React.js & Vue.js</li>
+                <li>Node.js & Express</li>
+                <li>Python & Django</li>
+                <li>SQL & NoSQL</li>
+                <li>Git & GitHub</li>
+            </ul>
+        </div>
+
+        <div class="timeline">
+            <h2>📅 Minha Jornada</h2>
+            <div class="timeline-item">
+                <h3>Desenvolvedor Full Stack</h3>
+                <span>2023 - Atual</span>
+                <p>Atuando como desenvolvedor Full Stack em projetos inovadores.</p>
+            </div>
+        </div>
+
+        <div class="projects">
+            <h2>🛠️ Projetos</h2>
+            <div class="card">
+                <h3>Sistema de Gestão</h3>
+                <p>Um software para gerenciamento empresarial usando React e Node.js.</p>
+            </div>
+            <div class="card">
+                <h3>Plataforma de Cursos</h3>
+                <p>Uma plataforma de ensino online com integração API.</p>
+            </div>
+        </div>
+
+        <div class="social">
+            <h2>🌐 Me Encontre Online</h2>
+            <a href="#">🐦 Twitter</a>
+            <a href="#">💼 LinkedIn</a>
+            <a href="#">👨‍💻 GitHub</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle("light-mode");
+            document.querySelector(".toggle-mode").textContent = 
+                document.body.classList.contains("light-mode") ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+        }
+    </script>
+</body>
+</html>
