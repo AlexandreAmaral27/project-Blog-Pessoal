@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários nas Notícias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .news {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .comment-section {
+            margin-top: 10px;
+        }
+        .comment {
+            background: #f9f9f9;
+            padding: 5px;
+            border-left: 3px solid #007BFF;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 2px 5px;
+            cursor: pointer;
+        }
+        .comment-input {
+            width: 80%;
+            padding: 5px;
+        }
+        .comment button {
+            margin-left: 10px;
+        }
+        .share-buttons {
+            margin-top: 10px;
+        }
+        .share-buttons a {
+            text-decoration: none;
+            margin-right: 10px;
+            padding: 5px 10px;
+            color: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .whatsapp { background: #25D366; }
+        .twitter { background: #1DA1F2; }
+        .facebook { background: #3b5998; }
+        .highlights {
+            border: 2px solid #FFD700;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #FFF9C4;
+        }
+    </style>
+</head>
+<body>
+    <div class="highlights">
+        <h2>Destaques do Dia</h2>
+        <ul id="highlights-list"></ul>
+    </div>
+
+    <div class="news" id="news-1">
+        <h2>Notícia 1</h2>
+        <p>Conteúdo da notícia 1...</p>
+        <button onclick="likeNews(1)">Curtir</button> <span id="likes-1">0</span> curtidas
+        <div class="share-buttons">
+            <a href="#" class="whatsapp" onclick="shareNews(1, 'whatsapp')">WhatsApp</a>
+            <a href="#" class="twitter" onclick="shareNews(1, 'twitter')">Twitter</a>
+            <a href="#" class="facebook" onclick="shareNews(1, 'facebook')">Facebook</a>
+        </div>
+        <div class="comment-section">
+            <h3>Comentários</h3>
+            <div class="comments" id="comments-1"></div>
+            <input type="text" class="comment-input" id="comment-input-1" placeholder="Adicione um comentário">
+            <button onclick="addComment(1)">Comentar</button>
+        </div>
+    </div>
+
+    <div class="news" id="news-2">
+        <h2>Notícia 2</h2>
+        <p>Conteúdo da notícia 2...</p>
+        <button onclick="likeNews(2)">Curtir</button> <span id="likes-2">0</span> curtidas
+        <div class="share-buttons">
+            <a href="#" class="whatsapp" onclick="shareNews(2, 'whatsapp')">WhatsApp</a>
+            <a href="#" class="twitter" onclick="shareNews(2, 'twitter')">Twitter</a>
+            <a href="#" class="facebook" onclick="shareNews(2, 'facebook')">Facebook</a>
+        </div>
+        <div class="comment-section">
+            <h3>Comentários</h3>
+            <div class="comments" id="comments-2"></div>
+            <input type="text" class="comment-input" id="comment-input-2" placeholder="Adicione um comentário">
+            <button onclick="addComment(2)">Comentar</button>
+        </div>
+    </div>
+
+    <script>
+        let newsLikes = { 1: 0, 2: 0 };
+
+        function addComment(newsId) {
+            const input = document.getElementById(`comment-input-${newsId}`);
+            const commentText = input.value.trim();
+            if (commentText) {
+                const commentSection = document.getElementById(`comments-${newsId}`);
+                const commentDiv = document.createElement("div");
+                commentDiv.classList.add("comment");
+                
+                const textSpan = document.createElement("span");
+                textSpan.textContent = commentText;
+                
+                const deleteBtn = document.createElement("button");
+                deleteBtn.textContent = "Excluir";
+                deleteBtn.classList.add("delete-btn");
+                deleteBtn.onclick = function() {
+                    commentDiv.remove();
+                };
+                
+                commentDiv.appendChild(textSpan);
+                commentDiv.appendChild(deleteBtn);
+                commentSection.appendChild(commentDiv);
+                input.value = "";
+            }
+        }
+
+        function likeNews(newsId) {
+            newsLikes[newsId]++;
+            document.getElementById(`likes-${newsId}`).textContent = newsLikes[newsId];
+            updateHighlights();
+        }
+
+        function updateHighlights() {
+            const highlightsList = document.getElementById("highlights-list");
+            highlightsList.innerHTML = "";
+            const sortedNews = Object.entries(newsLikes).sort((a, b) => b[1] - a[1]);
+            sortedNews.forEach(([id, likes]) => {
+                if (likes > 0) {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `Notícia ${id} - ${likes} curtidas`;
+                    highlightsList.appendChild(listItem);
+                }
+            });
+        }
+
+        function shareNews(newsId, platform) {
+            const newsElement = document.getElementById(`news-${newsId}`);
+            const title = newsElement.querySelector("h2").textContent;
+            const url = window.location.href;
+            let shareUrl = "";
+            
+            if (platform === "whatsapp") {
+                shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + url)}`;
+            } else if (platform === "twitter") {
+                shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+            } else if (platform === "facebook") {
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            }
+            
+            window.open(shareUrl, '_blank');
+        }
+    </script>
+</body>
+</html>

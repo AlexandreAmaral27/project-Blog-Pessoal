@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias Avançadas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .news-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .news-filter select {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .news-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .news-item:hover {
+            transform: scale(1.05);
+        }
+        .news-item img {
+            width: 100%;
+            border-radius: 5px;
+            height: 180px;
+            object-fit: cover;
+        }
+        .news-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .news-description {
+            font-size: 14px;
+            color: #666;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+        .modal img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .close {
+            cursor: pointer;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Últimas Notícias</h2>
+        <div class="news-filter">
+            <select id="categoryFilter">
+                <option value="all">Todas as Categorias</option>
+                <option value="technology">Tecnologia</option>
+                <option value="space">Espaço</option>
+                <option value="economy">Economia</option>
+            </select>
+        </div>
+        <div class="news-grid" id="news-container"></div>
+    </div>
+
+    <div class="modal" id="newsModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script>
+        const newsData = [
+            { title: "Nova tecnologia revoluciona a indústria", description: "Cientistas desenvolvem um novo método inovador para aprimorar a tecnologia.", image: "https://source.unsplash.com/300x200/?technology", category: "technology" },
+            { title: "Exploração espacial avança", description: "Uma nova missão espacial está em andamento para explorar planetas distantes.", image: "https://source.unsplash.com/300x200/?space", category: "space" },
+            { title: "Economia global em recuperação", description: "Os mercados globais mostram sinais de recuperação após um ano desafiador.", image: "https://source.unsplash.com/300x200/?economy", category: "economy" }
+        ];
+
+        function loadNews(filter = "all") {
+            const container = document.getElementById('news-container');
+            container.innerHTML = '';
+            newsData.forEach(news => {
+                if (filter === "all" || news.category === filter) {
+                    const newsItem = document.createElement('div');
+                    newsItem.classList.add('news-item');
+                    newsItem.innerHTML = `
+                        <img src="${news.image}" alt="Notícia">
+                        <div class="news-title">${news.title}</div>
+                        <div class="news-description">${news.description}</div>
+                    `;
+                    newsItem.onclick = () => openModal(news);
+                    container.appendChild(newsItem);
+                }
+            });
+        }
+
+        function openModal(news) {
+            document.getElementById('modalImage').src = news.image;
+            document.getElementById('modalTitle').innerText = news.title;
+            document.getElementById('modalDescription').innerText = news.description;
+            document.getElementById('newsModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('newsModal').style.display = 'none';
+        }
+
+        document.getElementById('categoryFilter').addEventListener('change', (e) => {
+            loadNews(e.target.value);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => loadNews());
+    </script>
+</body>
+</html>

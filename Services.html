@@ -53,11 +53,13 @@
         <div id="google_translate_element"></div>
         <div class="conteiner-titular">
             <ul class="menu02">
-                <li><a href="index.html"><span class="material-icons">home</span><span class="linha">Home</span></a></li>
-                <li><a href="about.html"><span class="material-icons">event_note</span><span class="linha">About</span></a></li>
-                <li><a href="Services.html"><span class="material-icons">storefront</span><span class="linha">Services</span></a></li>
-                <li><a href="Curiosities.html"><span class="material-icons">explore</span><span class="linha">Curiosities</span></a></li>
-                <li><a href="News.html"><span class="material-icons">bar_chart</span><span class="linha">News</span></a></li>
+
+                <li><a href="index.html"><span class="material-icons notranslate">home</span><span class="linha">Home</span></a></li>
+                <li><a href="about.html"><span class="material-icons notranslate">event_note</span><span class="linha">About</span></a></li>
+                <li><a href="Services.html"><span class="material-icons notranslate">storefront</span><span class="linha">Services</span></a></li>
+                <li><a href="Curiosities.html"><span class="material-icons notranslate">explore</span><span class="linha">Curiosities</span></a></li>
+                <li><a href="News.html"><span class="material-icons notranslate">bar_chart</span><span class="linha">News</span></a></li>
+            </ul> 
             </div>
 
             <div class="navicon">
@@ -357,7 +359,7 @@
         function googleTranslateInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en', // Define o idioma padrão do site
-                includedLanguages: 'pt', // Idiomas disponíveis
+                includedLanguages: 'pt,fr,es', // Idiomas disponíveis
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
