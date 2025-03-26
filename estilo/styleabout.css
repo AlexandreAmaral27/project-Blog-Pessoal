@@ -48,7 +48,19 @@
     padding: 10px;
     box-shadow: 0px 0px 2px 1px #00000012;
 }
-
+.conteiner-seta{
+    display: flex;
+}
+.seta{
+    position: relative;
+    left: 30%;
+    top: 37px;
+}
+.seta2{
+    position: relative;
+    left: -30%;
+    top: 37px;
+}
 .perfil{
     display: block;
     margin-right: auto;
@@ -58,8 +70,11 @@
     height: 90px;
     justify-content: center;
     overflow: hidden;
-    
-    
+    border: 3px solid  #1cd8d2;
+      
+}
+.perfil:active{
+    transform: scale(1.1);
 }
 .perfil img{ 
     justify-content: center;
@@ -68,9 +83,7 @@
     height: 100%;
     transition: 1s all ease-in-out;
 }
-.perfil img:hover{
-    transform: scale(1.5);
-}
+
 .perfil ul li{
     display: block;
 }

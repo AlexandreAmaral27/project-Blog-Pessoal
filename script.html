@@ -1,14 +1,150 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Tech - Últimas Notícias</title>
-   
+    <title>Destaques - Estilo Instagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .highlights {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .highlight {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff8c00, #ff2d55);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: 3px solid white;
+        }
+        .highlight:hover {
+            transform: scale(1.1);
+        }
+        .highlight img {
+            width: 70%;
+            border-radius: 50%;
+        }
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 400px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, transform 0.3s;
+            text-align: center;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .modal img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .close {
+            background: crimson;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .nav-buttons button {
+            background: #ff8c00;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Destaques</h1>
+        <div class="highlights">
+            <div class="highlight" onclick="openModal('Full Stack')">💻</div>
+            <div class="highlight" onclick="openModal('Backend')">🖥️</div>
+            <div class="highlight" onclick="openModal('Frontend')">🎨</div>
+            <div class="highlight" onclick="openModal('Projetos')">📁</div>
+            <div class="highlight" onclick="openModal('Inspiração')">🌟</div>
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <img id="modal-image" src="" alt="Destaque" />
+        <img src="" alt="">
+        <div class="nav-buttons">
+            <button onclick="prevImage()">⬅️</button>
+            <button onclick="nextImage()">➡️</button>
+        </div>
+        <button class="close" onclick="closeModal()">Fechar</button>
+    </div>
+    <script>
+        const modal = document.getElementById("modal");
+        const modalImage = document.getElementById("modal-image");
+        let currentIndex = 0;
+        let currentImages = [];
 
-    
+        const details = {
+            "Full Stack": ["https://via.placeholder.com/300?text=Full+Stack+1", "https://via.placeholder.com/300?text=Full+Stack+2"],
+            "Backend": ["https://via.placeholder.com/300?text=Backend+1", "https://via.placeholder.com/300?text=Backend+2"],
+            "Frontend": ["https://via.placeholder.com/300?text=Frontend+1", "https://via.placeholder.com/300?text=Frontend+2"],
+            "Projetos": ["https://via.placeholder.com/300?text=Projetos+1", "https://via.placeholder.com/300?text=Projetos+2"],
+            "Inspiração": ["https://via.placeholder.com/300?text=Inspiração+1", "https://via.placeholder.com/300?text=Inspiração+2"]
+        };
+
+        function openModal(type) {
+            currentImages = details[type];
+            currentIndex = 0;
+            modalImage.src = currentImages[currentIndex];
+            modal.classList.add("active");
+        }
+
+        function closeModal() {
+            modal.classList.remove("active");
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % currentImages.length;
+            modalImage.src = currentImages[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+            modalImage.src = currentImages[currentIndex];
+        }
+    </script>
 </body>
 </html>
