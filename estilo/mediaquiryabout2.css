@@ -1,0 +1,234 @@
+@charset "utf8";
+
+@media (max-width:970px) {
+  
+   
+    .header{
+        flex-direction: column;
+        text-align: center;
+        padding-top: 4rem;
+    }
+    #h1amaral{
+      font-size: 35px;
+    }
+   
+   
+    .conteiner-titular{
+      flex-direction: column-reverse;
+      background-color: #302f2f56;
+    }
+    .conteiner-titular ul li{
+      background-color: #201e1e5a;
+      flex-direction: column;
+    }
+    .img-menu{
+      
+      display: block;
+      position: relative;
+      left: -3%;
+    }
+   .navicon img{
+      position: relative;
+      left: 94%;
+      padding-bottom: 3px;
+      padding-top: 3px;
+   }
+   ul li a{
+   
+      text-decoration: none;
+      color: #797979;
+      font-size: 20px;
+      display: block;
+      padding: 10px 15px;
+      position: relative;
+  }
+  ul li a:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #1cd8d2;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: all 0.5s;
+  }
+  ul li a:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #1cd8d2;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: all 0.5s;
+  }
+  ul li a:hover{
+      color: #1cd8d2;
+  }
+  ul li a:hover:before,ul li a:hover{
+      transform: scaleX(1);
+  
+  }
+   .esquerda button{
+      margin-bottom: 17px;
+
+
+   }
+  .menu02{
+   text-align: center;
+   display: block;
+  }
+  .conteiner{
+   display: flex;
+   justify-content: center;
+  }
+  .side-botton2{
+    width: 400px;
+  }
+  
+  
+ }
+@media (max-width:970px){
+   .button2{
+      display: none;
+   }
+   .button3{
+      display: inline;
+      width: 120px;
+      margin-top: 8px;
+      color: white;
+      border: none;
+      background-color: #3d3d3dc7;
+      
+
+   }
+   .button3:hover{
+      color: #000000;
+      background-color: #1cd8d2;
+      
+   }
+   
+    .side-botton{
+      
+       flex-direction:column;
+    }
+   .conteiner-geral{
+      justify-content: center;
+       align-items: center;
+      flex-direction: column;
+   }
+   .side-botton2{
+      flex-direction: column;
+   }
+
+   .direita2 img{
+      width: 111%;
+      position: relative;
+      left: 0%;
+      
+   }
+   .exclusive{
+      flex-direction: column-reverse;
+   }
+   .inner-imagm{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 15px;
+          margin-bottom: 20px;
+          width: 90%;
+          height: 227px;
+          background-color: #3d3d3d68;
+      }
+      
+      
+      .links-footer ul li{
+         margin-bottom: 0.5rem;
+         cursor: pointer;
+         padding-bottom: 3px;
+         padding-top: 3px;
+       }
+       
+       .inner-Visao-geral{
+         width: 99%;
+       }
+       .visao-geral02{
+         padding: 10px 0px 10px 0px;
+         width: 100%;
+
+       }
+       
+       .prf{
+         padding: 10px;
+         text-align: left;
+          
+       }
+       .direita2{
+         width:100%;
+       }
+       .direita2 img{
+         width: 91%;
+         
+       }
+
+       
+   }
+
+   @media (max-width: 970px) {
+      .esperiencia02 {
+          width: 100%;
+          display: flex
+  ;
+          justify-content: center;
+          border: 1px solid rgba(128, 125, 125, 0.773);
+      }
+  }
+  
+   
+
+
+
+  
+ 
+@media(max-width:970px){
+    .cor-de-fundo{
+      display: flex;
+      justify-content: center;
+      
+    }
+    .header-inner-conteiner{
+      width: 100%;
+    }
+    .header-bottom-side-right img{
+      width: 485px;
+      
+    }
+    .testemunhos{
+       flex-direction: column;
+    }
+    .testemunho{
+       margin-bottom: 1.2rem;
+    }
+  }
+@media(max-width:1010px){
+    .footer-content{
+       display: inline;
+       font-size: 0.8rem;
+    }
+    .footer-content>div{
+       padding: 1rem;
+    }
+    .download-options div{
+       display: inline;
+    }
+    .download-options div img{
+       width: 120px;
+    }
+    .copyright{
+       font-size: 0.8rem;
+    }
+  }
