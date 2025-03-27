@@ -1,89 +1,495 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="pt">
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog.About</title>
+    <title>About Me - Full Stack Developer</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="estilo/mediaquiryabout.css">
     <link rel="stylesheet" href="estilo/style.css">
-   <link rel="stylesheet" href="estilo/mediaquiry.css">
-   <link rel="stylesheet" href="estilo/styleabout.css">
-   <link rel="stylesheet" href="estilo/mediaquiryabout.css">
-   <style>
-   
-    #google_translate_element {
-        margin-bottom: 20px;
-        text-align: right;
-    }
+    <link rel="stylesheet" href="estilo/mediaquiry.css">
+    <link rel="stylesheet" href="estilo/styleabout.css">
     
-</style>
-   
+    <!-- <link rel="stylesheet" href="estilo/style.css"> -->
+    <style>
+       
+        .header {
+            background-color: #2222220f;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            margin-top: 1%;
+        }
+        @media (max-width:970px){
+
+        .header{
+            display: none;
+         }
+        }
+
+        .toggle-mode {
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px 15px;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 5px;
+            color: #000;
+            transition: 0.3s;
+        }
+
+        .toggle-mode:hover {
+            background: var(--button-hover);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid #1cd8d2db;
+            transition: transform 0.3s;
+        }
+
+        .profile img:hover {
+            transform: scale(1.1);
+        }
+
+        .bio {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .skills {
+            
+            margin-top: 30px;
+        }
+
+        .skills h2 {
+            padding: 10px;
+            border-radius: 20px;
+            background-color: #302f2f56;
+            margin-bottom: 10px;
+        }
+
+        .skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 25px;
+            border-radius: 0 0 21px 21px;
+        }
+
+        .skills li {
+            background: var(--card-bg);
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .skills li:hover {
+            background:#1cd8d2c1 ;
+            color: #ffffff;
+        }
+
+        .timeline {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .timeline-item {
+            background: var(--card-bg);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item h3 {
+            margin: 0;
+            color: #13e5de;
+        }
+
+        .timeline-item span {
+            font-size: 14px;
+            color: #dcdcdcf2;
+        }
+
+        .projects {
+            margin-top: 30px;
+        }
+
+        .projects .card {
+            background: var(--card-bg);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .projects .card:hover {
+            transform: translateY(-5px);
+        }
+
+        
+    </style>
+    <!--projectos -->
+    <style>
+        
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .highlight {
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .highlight:hover {
+            background: #292929;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            width: 80%;
+            max-width: 400px;
+        }
+        .modal-content ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+            border-radius: 5px;
+
+        }
+        .modal-content li{
+            
+          background: var(--card-bg);
+          padding: 10px 15px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+          transition: 0.3s;
+        }
+        .modal-content li:hover {
+            background:#1cd8d2c1 ;
+            color: #ffffff;
+        }
+        .modal-content ul li a{
+            text-decoration: none;
+            direction: none;
+           display: inline;
+           color: white;
+        }
+        .modal-content ul li a:hover{
+            transition: none;
+        }
+        .close {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+    <!--projectos -->
+
+    <!--destaques-->
+    <style>
+       
+        .container{
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .highlights1 {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .highlight1 {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #545252d2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: 3px solid #1cd8d2;
+        }
+        .highlight1:hover {
+            transform: scale(1.1);
+        }
+        .highlight1 img {
+            width: 70%;
+            border-radius: 50%;
+        }
+        .modalContainer {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 400px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, transform 0.3s;
+            text-align: center;
+        }
+        .modalContainer.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .modalImage {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .closeButton {
+            background: rgba(220, 20, 60, 0.644);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .closeButton:hover{
+            background: rgb(244, 20, 65);
+        }
+        .navButtons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .navButtons button {
+            background: #7e7e7ebf;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .navButtons button:hover{
+            background-color: #13e5de;
+
+        }
+    </style>
+    <!--destaques-->
+
+    <style>
+        #google_translate_element {
+            padding: 15px;
+           
+           text-align: right;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h2>Blog.Pessoal</h2>
+        
         <h1 id="h1amaral">Alexandre P . S Amaral</h1>
         <div id="google_translate_element"></div>
         <div class="conteiner-titular">
-            <ul class="menu02">
 
-                <li><a href="index.html"><span class="material-icons notranslate">home</span><span class="linha">Home</span></a></li>
-                <li><a href="about.html"><span class="material-icons notranslate">event_note</span><span class="linha">About</span></a></li>
-                <li><a href="Services.html"><span class="material-icons notranslate">storefront</span><span class="linha">Services</span></a></li>
-                <li><a href="Curiosities.html"><span class="material-icons notranslate">explore</span><span class="linha">Curiosities</span></a></li>
-                <li><a href="News.html"><span class="material-icons notranslate">bar_chart</span><span class="linha">News</span></a></li>
-            </ul> 
+            <div >
+                 <ul class="menu02">
+
+                    <li><a href="index.html"><span class="material-icons notranslate">home</span><span class="linha">Home</span></a></li>
+                    <li><a href="about.html"><span class="material-icons notranslate">event_note</span><span class="linha">About</span></a></li>
+                    <li><a href="Services.html"><span class="material-icons notranslate">storefront</span><span class="linha">Services</span></a></li>
+                    <li><a href="Curiosities.html"><span class="material-icons notranslate">explore</span><span class="linha">Curiosities</span></a></li>
+                    <li><a href="News.html"><span class="material-icons notranslate">bar_chart</span><span class="linha">News</span></a></li>
+                </ul> 
+                
             </div>
 
             <div class="navicon">
 
-                <span class="img-menu"><img src="imagens/menu.png "></span>
+                <span class="img-menu"><img src="imagens/logos/menu.png "></span>
                 
             </div>
         </div>
         
 
     </header>
-    <main>
-        <div class="about">
-            <div class="about-me">
-               
-                    <h1>Alexandre Amaral</h1>
-                    <div class="conteiner-seta">
-                        
-                            <span class="seta">&#8594</span>
-                             <div class="perfil">
-                        
-                                <a href="newsaboutme.html" target="_blank"><img src="imagens/full/Coding-Wallpaper-HD-Free-download.jpg" alt=""></a>
-                        
-                             </div>
-                              <span class="seta2">&#8592</span>
-                        
-                    </div>
-                        <div id="paragrafo">
-                            <p><img src="imagens/full/phone.png" alt=""><span class="linha">+244 929-764-090</span></p>
-                            <p><img src="imagens/full/email.png" alt=""><span class="linha">amaralalexandre327@gmail.com</span></p>
-                            <p><img src="imagens/full/localizac.png" alt=""><span class="linha">Viana-Porto Seco</span></p>
-                        </div>
-                    <div class="paragrafo01">
-                        <p>Hello, Alexandre Pedro Simões do Amaral, I am Angolan (🇦🇴), born in Angola-Luanda (Ingombotas), I live with my parents and brother and I work with the internet. In short, being Angolan is a privilege, as it is being part of a country with a rich culture, and a history of struggle and overcoming. The way of life in Angola reflects the strength of the community, but also a vision of the future.</p>
-                    </div>
-                
-
-              
-
+   
+<main>
+       <div class="header">
+        About Me
+       </div>
+        <div class="container">
+            <div class="profile">
+                <img src="imagens/full/Coding-Wallpaper-HD-Free-download.jpg" alt="Minha Foto">
+                <h2>Alexandre Amaral</h2>
+                <p class="bio">Full Stack Developer passionate about technology, innovation and digital experiences. 🚀</p>
+    
+                <p><span class="material-icons notranslate">call</span><span class="linha">+244 929-764-090</span></p>
+                <p><span class="material-icons notranslate">email</span><span class="linha">amaralalexandre327@gmail.com</span></p>
+                <p><span class="material-icons notranslate">location_on</span><span class="linha">Viana-Porto Seco</span></p>
             </div>
-            <div class="habilidades">
-                <h2>SKILLS</h2>
-                <p>• Website Developer.</p>
-                <p>• programming.</p>
-                <p>• Content Creator.</p>
-                <p>• Content Editor</p>
-                <p>• Sistemas Operacionais</p>
-                <p>• Database Developer.</p>
-
+    
+    
+    
+            <div class="skills">
+                <h2>💡 SKILLS AND TECHNOLOGIES</h2>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React.js & Vue.js</li>
+                    <li>Node.js & Express</li>
+                    <li>Python & Django</li>
+                    <li>SQL & NoSQL</li>
+                    <li>Git & GitHub</li>
+                </ul>
             </div>
+    
+            <div class="timeline">
+                <h2>📅MY JOURNEY</h2>
+                <div class="timeline-item">
+                    <h3>Full Stack Developer</h3>
+                    <span>2025 - Atual</span>
+                    <p>Acting as a Full Stack developer on innovative projects.</p>
+                </div>
+            </div>
+    
+            <div class="container">
+                <h1>HIGHLIGHTS</h1>
+                <div class="highlights1">
+                    <div class="highlight1" onclick="openHighlightModal('Full Stack')">💻 Fullstack</div>
+                    <div class="highlight1" onclick="openHighlightModal('Backend')">⚙️ Backend</div>
+                    <div class="highlight1" onclick="openHighlightModal('Frontend')">🎨Frontend</div>
+                    <div class="highlight1" onclick="openHighlightModal('Projetos')">📁 Projectos</div>
+                    <div class="highlight1" onclick="openHighlightModal('Amigos')">👥Friends</div>
+                    <div class="highlight1" onclick="openHighlightModal('Inspiração')">✈️ Viagens</div>
+    
+                </div>
+            </div>
+            <div id="modalContainer" class="modalContainer">
+                <img id="modalImage" class="modalImage" src="" alt="Destaque" />
+                <div>Blog.Amaral</div>
+                <div class="navButtons">
+                    <button onclick="previousHighlightImage()">⬅️</button>
+                    <button onclick="nextHighlightImage()">➡️</button>
+                </div>
+                <button class="closeButton" onclick="closeHighlightModal()">Fechar</button>
+            </div>
+    
+            <!-- <div id="modal1" class="modal1">
+                <img id="modal1-image" src="" alt="Destaque" />
+    
+                <div class="nav-buttons">
+                    <button onclick="prevImage()">⬅️</button>
+                    <button onclick="nextImage()">➡️</button>
+                </div>
+                <button class="close1" onclick="closeModal()">Fechar</button>
+            </div> -->
+    
+            <div class="projects">
+                <h2>🛠️PROJECTS</h2>
+                <div class="container">
+    
+                    <div class="highlight" onclick="showModal('modal01')">⚙️ Backend</div>
+                    <div class="highlight" onclick="showModal('modal2')">🎨 Frontend</div>
+                    <div class="highlight" onclick="showModal('modal3')">💻
+                    Full Stack</div>
+                </div>
+    
+                <div id="modal01" class="modal" onclick="closeModal(event, 'modal01')">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal(event, 'modal01')">&times;</span><h2>⚙️ Projectos Backend</h2>
+                        <p>
+                         <ul>
+                              <li>#########</li>
+                              <li>#########</li>
+                              <li>#########</li>
+                              <li>#########</li>
+    
+                        </ul>
+                        </p>
+    
+                    </div>
+                </div>
+    
+                <div id="modal2" class="modal" onclick="closeModal(event, 'modal2')">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal(event, 'modal2')">&times;</span>
+                        <h2>🎨 Projectos Frontend</h2>
+                        <p>
+                         <ul>
+                              <li><a href="#">login</a></li>
+                              <li><a href="#">Loja Virtual</a></li>
+                              <li><a href="#">Robo Android</a></li>
+                              <li><a href="#">Cordel Moderno</a></li>
+                        </ul>
+                        </p>
+    
+                    </div>
+                </div>
+    
+                <div id="modal3" class="modal" onclick="closeModal(event, 'modal3')">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal(event, 'modal3')">&times;</span>
+                        <h2>💻 Full Stack</h2>
+                        <p>
+                            <ul>
+                                <li>#########</li>
+                                <li>#########</li>
+                                <li>#########</li>
+                                <li>#########</li>
+                           </ul>
+                           </p>
+                    </div>
+                </div>
+            </div>
+    
+            
         </div>
+        
         <div class="conteiner-inner-about">
             <div class="conteiner-about">
                 <div class="conteiner-resumo">
@@ -109,7 +515,7 @@
             
             </div>
         </div>
-        
+
         <div class="inner-full-stack">
             <h2>FULL-STACK TECHNOLOGIES</h2>
         </div>
@@ -288,60 +694,131 @@
      </div>
              
         </div>
+</main>
 
+
+<footer class="gray-background">
+    <div class="page-inner-content footer-content">
+      <div class="download-options">
+          <h2>Download Our App</h2>
+          <p>Download our application for android and ios</p>
+          <div>
+              <img src="imagens/logos/app-store.png" alt="">
+              <img src="imagens/logos/play-store.png" alt="">
+          </div>
+      </div>
+      
+
+      <div class="logo-footer">
+          <h2 class="logo">Blog.Personal</h2>
+          <p>The objective of my Blog is to create a space to share content that adds value to the target audience, addressing topics of interest aligned with my identity or needs, and in the future to open my virtual store and be an agile instrument for buying and selling products or services, carried out through a digital environment (internet), and one of the bases of today's commerce.</p>
+      </div>
+      
+      <div class="conteiner-redes-sociais">
+        <h2>My Social Networks</h2>
+        <p>Contact us:</p>
+         <div class="inner-redes-sociais">
+            
+             <a href="https://www.instagram.com/amaral_alexandre_27/" target="_blank"><img src="imagens/logos/logo-instagram.jpg" alt=""></a>
+             <a href="https://twitter.com/Alexandre200420" target="_blank"><img src="imagens/logos/logo-twitter.jpg" alt=""></a>
+             <a href="https://github.com/AlexandreAmaral27" target="_blank"><img src="imagens/logos/logo-github.jpg" alt=""></a>
+             <a href="https://www.linkedin.com/in/alexandre-amaral-488717294/" target="_blank"><img src="imagens/logos/Logo-LinkedIn.png" alt=""></a>
+             <a href="https://www.youtube.com/channel/UCLGrtUtd7VcAQ5cApMTUWfA" target="_blank"><img src="imagens/logos/logo-youtube.jpg" alt=""></a>
+         </div>
+   </div>
+
+    </div>
+    <hr class="page-inner-content">
+    <div class="page-inner-content copyright">
+      <p>Copyright 2025 - Alexandre Amaral - All rights reserved</p>
+    </div>
+ </footer>
+
+
+    <!-- destaques -->
+    
+    <script>
+        const modalContainer = document.getElementById("modalContainer");
+        const modalImage = document.getElementById("modalImage");
+        let currentHighlightIndex = 0;
+        let currentHighlightImages = [];
+      
+        const highlightDetails = {
+
+            "Full Stack": ["imagens/destaques/img/full-stack/1.webp", "imagens/destaques/img/full-stack/2.png","imagens/destaques/img/full-stack/3.jpeg", "imagens/destaques/img/full-stack/4.jpg","imagens/destaques/img/full-stack/5.webp"],
+           
+           
+            "Backend": ["imagens/destaques/img/backend/1.webp", "imagens/destaques/img/backend/2.webp", "imagens/destaques/img/backend/3.webp", "imagens/destaques/img/backend/4.jpg","imagens/destaques/img/backend/5.jpeg","imagens/destaques/img/backend/6.webp"],
 
         
-        
-    </main>
-    <footer class="gray-background">
-        <div class="page-inner-content footer-content">
-          <div class="download-options">
-              <h2>Download Our App</h2>
-              <p>Download our application for android and ios</p>
-              <div>
-                  <img src="imagens/app-store.png" alt="">
-                  <img src="imagens/play-store.png" alt="">
-              </div>
-          </div>
-          
+            "Frontend": ["imagens/destaques/img/frontend/1.webp", "imagens/destaques/img/frontend/2.webp","imagens/destaques/img/frontend/3.webp", "imagens/destaques/img/frontend/4.webp","imagens/destaques/img/frontend/5.webp"],
 
-          <div class="logo-footer">
-              <h2 class="logo">Personal.Blog</h2>
-              <p>The objective of my Blog is to create a space to share content that adds value to the target audience, addressing topics of interest aligned with my identity or needs, and in the future to open my virtual store and be an agile instrument for buying and selling products or services, carried out through a digital environment (internet), and one of the bases of today's commerce.</p>
-          </div>
-          
-          <div class="conteiner-redes-sociais">
-            <h2>My Social Networks</h2>
-            <p>Contact us:</p>
-             <div class="inner-redes-sociais">
-                
-                 <a href="https://www.instagram.com/amaral_alexandre_27/" target="_blank"><img src="imagens/logo-instagram.jpg" alt=""></a>
-                 <a href="https://twitter.com/Alexandre200420" target="_blank"><img src="imagens/logo-twitter.jpg" alt=""></a>
-                 <a href="https://github.com/AlexandreAmaral27" target="_blank"><img src="imagens/logo-github.jpg" alt=""></a>
-                 <a href="https://www.linkedin.com/in/alexandre-amaral-488717294/" target="_blank"><img src="imagens/Logo-LinkedIn.png" alt=""></a>
-                 <a href="https://www.youtube.com/channel/UCLGrtUtd7VcAQ5cApMTUWfA" target="_blank"><img src="imagens/logo-youtube.jpg" alt=""></a>
-             </div>
-       </div>
+            
+            "Projetos": ["https://via.placeholder.com/300?text=Projetos+1", "https://via.placeholder.com/300?text=Projetos+2"],
 
-        </div>
-        <hr class="page-inner-content">
-        <div class="page-inner-content copyright">
-          <p>Copyright 2025 - Alexandre Amaral - All rights reserved</p>
-        </div>
-     </footer>
+            "Amigos": ["imagens/logo-instagram.jpg", "https://via.placeholder.com/300?text=Inspiração+2"],
+
+            "Inspiração": ["imagens/destaques/img/viagens/1.JPEG","imagens/destaques/img/viagens/2.jpg","imagens/destaques/img/viagens/3.jpg","imagens/destaques/img/viagens/4.jpg","imagens/destaques/img/viagens/5.jpg","imagens/destaques/img/viagens/6.jpg","imagens/destaques/img/viagens/7.jpg","imagens/destaques/img/viagens/16.jpg","imagens/destaques/img/viagens/17.JPEG"]
+        };
+
+        function openHighlightModal(type) {
+            currentHighlightImages = highlightDetails[type];
+            currentHighlightIndex = 0;
+            modalImage.src = currentHighlightImages[currentHighlightIndex];
+            modalContainer.classList.add("active");
+        }
+
+        function closeHighlightModal() {
+            modalContainer.classList.remove("active");
+        }
+
+        function nextHighlightImage() {
+            currentHighlightIndex = (currentHighlightIndex + 1) % currentHighlightImages.length;
+            modalImage.src = currentHighlightImages[currentHighlightIndex];
+        }
+
+        function previousHighlightImage() {
+            currentHighlightIndex = (currentHighlightIndex - 1 + currentHighlightImages.length) % currentHighlightImages.length;
+            modalImage.src = currentHighlightImages[currentHighlightIndex];
+        }
+    </script>
+
+    <!-- destaques -->
+     
+    <!-- <script>
+        function toggleMode() {
+            document.body.classList.toggle("light-mode");
+            document.querySelector(".toggle-mode").textContent = 
+                document.body.classList.contains("light-mode") ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+        }
+    </script> -->
 
      <!-- tradutor google -->
      <script type="text/javascript">
         function googleTranslateInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en', // Define o idioma padrão do site
-                includedLanguages: 'pt,fr,es', // Idiomas disponíveis
+                includedLanguages: 'pt,es,fr', // Idiomas disponíveis
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit"></script>
-       <!-- tradutor google -->
-    
+       <!-- tradutor google --> 
+
+<!-- projectos -->
+<script>
+    function showModal(id) {
+        document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(event, id) {
+        if (event.target.classList.contains('modal') || event.target.classList.contains('close')) {
+            document.getElementById(id).style.display = 'none';
+        }
+    }
+</script>
+<!-- projectos -->
+
+ 
 </body>
 </html>
