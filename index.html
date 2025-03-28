@@ -103,6 +103,9 @@
     }
     
 </style>
+<!-- menu -->
+
+<!-- menu -->
 </head>
 <body>
     <header>
@@ -113,7 +116,7 @@
         <div class="conteiner-titular">
 
             <div >
-                 <ul class="menu02">
+                 <ul class="menu02" id="menu">
 
                     <li><a href="index.html"><span class="material-icons notranslate">home</span><span class="linha">Home</span></a></li>
                     <li><a href="about.html"><span class="material-icons notranslate">event_note</span><span class="linha">About</span></a></li>
@@ -124,7 +127,7 @@
                 
             </div>
 
-            <div class="navicon">
+            <div  class="navicon" onclick="toggleMenu()">
 
                 <span class="img-menu"><img src="imagens/logos/menu.png "></span>
                 
@@ -472,8 +475,14 @@
         }
     </script>
      <!-- comentario -->
-
-
+      
+     <!-- menu -->
+     <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("active");
+        }
+    </script>
+    <!-- menu -->
 
 
      

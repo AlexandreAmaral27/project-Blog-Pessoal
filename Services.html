@@ -49,22 +49,26 @@
 <body>
     <header>
         <h2>Blog.Pessoal</h2>
+        
         <h1 id="h1amaral">Alexandre P . S Amaral</h1>
         <div id="google_translate_element"></div>
         <div class="conteiner-titular">
-            <ul class="menu02">
 
-                <li><a href="index.html"><span class="material-icons notranslate">home</span><span class="linha">Home</span></a></li>
-                <li><a href="about.html"><span class="material-icons notranslate">event_note</span><span class="linha">About</span></a></li>
-                <li><a href="Services.html"><span class="material-icons notranslate">storefront</span><span class="linha">Services</span></a></li>
-                <li><a href="Curiosities.html"><span class="material-icons notranslate">explore</span><span class="linha">Curiosities</span></a></li>
-                <li><a href="News.html"><span class="material-icons notranslate">bar_chart</span><span class="linha">News</span></a></li>
-            </ul> 
+            <div >
+                 <ul class="menu02" id="menu">
+
+                    <li><a href="index.html"><span class="material-icons notranslate">home</span><span class="linha">Home</span></a></li>
+                    <li><a href="about.html"><span class="material-icons notranslate">event_note</span><span class="linha">About</span></a></li>
+                    <li><a href="Services.html"><span class="material-icons notranslate">storefront</span><span class="linha">Services</span></a></li>
+                    <li><a href="Curiosities.html"><span class="material-icons notranslate">explore</span><span class="linha">Curiosities</span></a></li>
+                    <li><a href="News.html"><span class="material-icons notranslate">bar_chart</span><span class="linha">News</span></a></li>
+                </ul> 
+                
             </div>
 
-            <div class="navicon">
+            <div  class="navicon" onclick="toggleMenu()">
 
-                <span class="img-menu"><img src="imagens/logos/menu.png"></span>
+                <span class="img-menu"><img src="imagens/logos/menu.png "></span>
                 
             </div>
         </div>
@@ -366,5 +370,13 @@
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit"></script>
        <!-- tradutor google -->
+
+         <!-- menu -->
+     <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("active");
+        }
+    </script>
+    <!-- menu -->
 </body>
 </html>

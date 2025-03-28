@@ -327,7 +327,7 @@
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
         transition: transform 0.3s ease, background 0.3s ease;
-        position: relative;
+       
     }
 
     .news-item:hover {
@@ -360,7 +360,7 @@
 
     .favorite-btn {
         position: absolute;
-        top: 10px;
+        
         right: 10px;
         cursor: pointer;
         font-size: 18px;
@@ -406,20 +406,24 @@
 <body>
     <header>
         <h2>Blog.Pessoal</h2>
+        
         <h1 id="h1amaral">Alexandre P . S Amaral</h1>
         <div id="google_translate_element"></div>
         <div class="conteiner-titular">
-            <ul class="menu02">
 
-                <li><a href="index.html"><span class="material-icons notranslate">home</span><span class="linha">Home</span></a></li>
-                <li><a href="about.html"><span class="material-icons notranslate">event_note</span><span class="linha">About</span></a></li>
-                <li><a href="Services.html"><span class="material-icons notranslate">storefront</span><span class="linha">Services</span></a></li>
-                <li><a href="Curiosities.html"><span class="material-icons notranslate">explore</span><span class="linha">Curiosities</span></a></li>
-                <li><a href="News.html"><span class="material-icons notranslate">bar_chart</span><span class="linha">News</span></a></li>
-            </ul> 
+            <div >
+                 <ul class="menu02" id="menu">
+
+                    <li><a href="index.html"><span class="material-icons notranslate">home</span><span class="linha">Home</span></a></li>
+                    <li><a href="about.html"><span class="material-icons notranslate">event_note</span><span class="linha">About</span></a></li>
+                    <li><a href="Services.html"><span class="material-icons notranslate">storefront</span><span class="linha">Services</span></a></li>
+                    <li><a href="Curiosities.html"><span class="material-icons notranslate">explore</span><span class="linha">Curiosities</span></a></li>
+                    <li><a href="News.html"><span class="material-icons notranslate">bar_chart</span><span class="linha">News</span></a></li>
+                </ul> 
+                
             </div>
 
-            <div class="navicon">
+            <div  class="navicon" onclick="toggleMenu()">
 
                 <span class="img-menu"><img src="imagens/logos/menu.png "></span>
                 
@@ -437,7 +441,7 @@
                     <li><a href="login.html" target="_blank"><span class="material-icons notranslate">lock</span><span class="linha">Login</span></a></li>
                    
                 </ul>
-                <button class="toggle-mode" onclick="toggleMode()"></button>
+                
             </div>
             
             <div class="news-container">
@@ -480,67 +484,7 @@
             <div class="indicators" id="indicators"></div>
         </div>
 
-        <!-- <div class="conteiner-news">
-            
-    <h1>Últimas Notícias</h1>
-    
-    
-    <div class="menu">
-        <button onclick="showContent('news')">Notícias</button>
-    </div>
-
-    <div id="news-section">
-        <div class="tabs">
-            <button class="tab-button" onclick="filterNews('All')">Todas</button>
-            <button class="tab-button" onclick="filterNews('Tech')">Tecnologias</button>
-            <button class="tab-button" onclick="filterNews('Business')">Negócios</button>
-            <button class="tab-button" onclick="filterNews('AI')">Inteligência Artificial</button>
-        </div>
-        
-        <div class="news-container" id="news-container"></div>
-    </div>
-    
-        <div id="news-details" class="news-details">
-        <button class="close-button" onclick="closeNews()">Fechar</button>
-        <h2 id="news-title"></h2>
-        <img id="news-image" src="" alt="">
-        <p id="news-content"></p>
-
-        <div class="conteiner-flex">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptas quasi corrupti perspiciatis, consectetur ratione exercitationem voluptate adipisci. Repellendus quam necessitatibus rerum quo. Magnam itaque nam quod consequuntur qui quas.
-            </p>
-            
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut pariatur aliquid neque minus, possimus sed ullam alias error odio repudiandae laboriosam aspernatur expedita sunt nulla et dolore repellat. Blanditiis, explicabo.
-            </p>
-            
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptas quasi corrupti perspiciatis, consectetur ratione exercitationem voluptate adipisci. Repellendus quam necessitatibus rerum quo. Magnam itaque nam quod consequuntur qui quas.
-            </p>
-            <img src="imagens/logo-facebook.jpg" alt="">
-        </div>
-
-        
-    
-        <div class="news" id="news-1">
-            <div class="inner-news">
-                <hr>
-                <h4>Partilhar</h4>
-                <button onclick="likeNews(1)">Curtir</button> <span id="likes-1">0</span> curtidas
-                <div class="share-buttons">
-                    <a href="#" class="whatsapp" onclick="shareNews(1, 'whatsapp')">WhatsApp</a>
-                    <a href="#" class="twitter" onclick="shareNews(1, 'twitter')">Twitter</a>
-                    <a href="#" class="facebook" onclick="shareNews(1, 'facebook')">Facebook</a>
-                </div>
-               
-            </div>
-        </div>
-    
-        
-        </div>
-
-        </div> -->
+       
     
     </main>
 
@@ -807,6 +751,7 @@
 
     <!--partilhar-->
 
+    <!--  -->
     <script>
         let newsData = [];
         let displayedNews = 4;
@@ -883,6 +828,15 @@
 
         fetchNews();
     </script>
+    <!--  -->
+
+      <!-- menu -->
+      <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("active");
+        }
+    </script>
+    <!-- menu -->
     
 </body>
 </html>
