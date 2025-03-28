@@ -36,7 +36,7 @@
       padding-bottom: 3px;
       padding-top: 3px;
    }
-   ul li a{
+   header ul li a{
    
       text-decoration: none;
       color: #797979;
@@ -45,7 +45,7 @@
       padding: 10px 15px;
       position: relative;
   }
-  ul li a:before{
+  header ul li a:before{
       content: '';
       position: absolute;
       top: 0;
@@ -57,7 +57,7 @@
       transform-origin: center;
       transition: all 0.5s;
   }
-  ul li a:after{
+  header ul li a:after{
       content: '';
       position: absolute;
       top: 0;
@@ -69,10 +69,10 @@
       transform-origin: center;
       transition: all 0.5s;
   }
-  ul li a:hover{
+  header ul li a:hover{
       color: #1cd8d2;
   }
-  ul li a:hover:before,ul li a:hover{
+  header ul li a:hover:before,ul li a:hover{
       transform: scaleX(1);
   
   }

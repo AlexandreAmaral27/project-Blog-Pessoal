@@ -54,7 +54,7 @@ header>p{
 }
 
 
-ul{
+header ul{
     background-color: #302f2f56;
     padding: 0px;
     margin: 0px;
@@ -66,12 +66,12 @@ ul{
     
     
 }
-ul li{
+header ul li{
     list-style: none;
     padding: 0 20px 0 20px;
     
 }
-ul li a{
+header ul li a{
    
     text-decoration: none;
     color: #797979;
@@ -81,7 +81,7 @@ ul li a{
     position: relative;
 }
 
-ul li a:before{
+header ul li a:before{
     content: '';
     position: absolute;
     top: 0;
@@ -93,7 +93,7 @@ ul li a:before{
     transform-origin: left;
     transition: all 0.5s;
 }
-ul li a:after{
+header ul li a:after{
     content: '';
     position: absolute;
     top: 0;
@@ -105,11 +105,11 @@ ul li a:after{
     transform-origin: right;
     transition: all 0.5s;
 }
-ul li a:hover{
+header ul li a:hover{
     color: #1cd8d2;
 }
 
-ul li a:hover:before,ul li a:hover {
+header ul li a:hover:before,ul li a:hover {
     transform: scaleX(1);
 
 }
