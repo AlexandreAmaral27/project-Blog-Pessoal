@@ -24,16 +24,21 @@
         left: 0;
         width: 100%;
         text-align: center;
-    }}
+    }
+    
+    
+
+}
           .esperiencia02 {
             width: 99.9%;
          }
-        .header {
+        .header1 {
+            display: block;
             background-color: #2222220f;
             padding: 20px;
             font-size: 24px;
             font-weight: bold;
-            display: flex;
+           
             justify-content: space-between;
             align-items: center;
             padding: 15px 30px;
@@ -95,7 +100,7 @@
         .skills h2 {
             padding: 10px;
             border-radius: 20px;
-            background-color: #302f2f56;
+            background-color: #302f2fae;
             margin-bottom: 10px;
         }
 
@@ -128,7 +133,7 @@
         }
 
         .timeline-item {
-            background: var(--card-bg);
+            background-color: #302f2f8a;
             padding: 15px;
             margin-bottom: 10px;
             border-radius: 5px;
@@ -182,6 +187,10 @@
         .highlight:hover {
             background: #292929;
         }
+        .model-link{
+            text-decoration: none;
+            color: white;
+        }
         .modal {
             display: none;
             position: fixed;
@@ -200,6 +209,9 @@
             text-align: left;
             width: 80%;
             max-width: 400px;
+            text-decoration: none;
+            color: white;
+            
         }
         .modal-content ul{
             list-style: none;
@@ -214,7 +226,8 @@
 
         }
         .modal-content li{
-            
+            text-decoration: none;
+            color: white;
           background: var(--card-bg);
           padding: 10px 15px;
           border-radius: 5px;
@@ -230,11 +243,14 @@
             direction: none;
            display: inline;
            color: white;
+          
+
         }
         .modal-content ul li a:hover{
             transition: none;
             
         }
+        
         .close {
             float: right;
             cursor: pointer;
@@ -373,7 +389,7 @@
     </header>
    
 <main>
-       <div class="header">
+       <div class="header1">
         About Me
        </div>
         <div class="container">
@@ -433,15 +449,7 @@
                 <button class="closeButton" onclick="closeHighlightModal()">Fechar</button>
             </div>
     
-            <!-- <div id="modal1" class="modal1">
-                <img id="modal1-image" src="" alt="Destaque" />
-    
-                <div class="nav-buttons">
-                    <button onclick="prevImage()">⬅️</button>
-                    <button onclick="nextImage()">➡️</button>
-                </div>
-                <button class="close1" onclick="closeModal()">Fechar</button>
-            </div> -->
+           
     
             <div class="projects">
                 <h2>🛠️PROJECTS</h2>
@@ -457,11 +465,11 @@
                     <div class="modal-content">
                         <span class="close" onclick="closeModal(event, 'modal01')">&times;</span><h2>⚙️ Projectos Backend</h2>
                         <p>
-                         <ul>
-                              <li><a href="#">#########</a></li>
-                              <li><a href="#">#########</a></li>
-                              <li><a href="#">#########</a></li>
-                              <li><a href="#">#########</a></li>
+                         <ul >
+                            <a href="#" target="_blank" class="model-link"><li>#########</li></a>
+                            <a href="#" target="_blank" class="model-link"><li>#########</li></a>
+                            <a href="#" target="_blank" class="model-link"><li>#########</li></a>
+                            <a href="#" target="_blank" class="model-link"><li>#########</li></a>
     
                         </ul>
                         </p>
@@ -475,10 +483,13 @@
                         <h2>🎨 Projectos Frontend</h2>
                         <p>
                          <ul>
-                              <li><a href="https://alexandreamaral27.github.io/projecto-login/" target="_blank">login</a></li>
-                              <li><a href="https://alexandreamaral27.github.io/Project-LojaVirtual/" target="_blank">Loja Virtual</a></li>
-                              <li><a href="#">Robo Android</a></li>
-                              <li><a href="https://alexandreamaral27.github.io/projeto-cordel-moderno/" target="_blank">Cordel Moderno</a></li>
+                              <a href="https://alexandreamaral27.github.io/projecto-login/" target="_blank" class="model-link"><li>login</li></a>
+                              
+                              <a href="https://alexandreamaral27.github.io/Project-LojaVirtual/" target="_blank" class="model-link"><li>Loja Virtual</li></a>
+
+                              <a href="https://alexandreamaral27.github.io/projecto-android/site.html" target="_blank" class="model-link"><li>Robo Android</li></a>
+
+                              <a href="https://alexandreamaral27.github.io/projeto-cordel-moderno/" target="_blank" class="model-link"><li>Cordel Moderno</li></a>
                         </ul>
                         </p>
     
@@ -491,10 +502,10 @@
                         <h2>💻 Full Stack</h2>
                         <p>
                             <ul>
-                              <li><a href="#">#########</a></li>
-                              <li><a href="#">#########</a></li>
-                              <li><a href="#">#########</a></li>
-                              <li><a href="#">#########</a></li>
+                                <a href="#" target="_blank" class="model-link"><li>#########</li></a>
+                                <a href="#" target="_blank" class="model-link"><li>#########</li></a>
+                                <a href="#" target="_blank" class="model-link"><li>#########</li></a>
+                                <a href="#" target="_blank" class="model-link"><li>#########</li></a>
                            </ul>
                            </p>
                     </div>
