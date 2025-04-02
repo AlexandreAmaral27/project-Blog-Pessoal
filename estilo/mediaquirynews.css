@@ -1,0 +1,34 @@
+@charset "utf8";
+
+
+@media (max-width:970px) {
+
+    .news-item {
+        background: var(--card-bg);
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        transform: none;
+       
+    }
+
+    .news-item:hover { 
+        transform: none;  
+    }
+    .favorite-btn {
+        position: absolute;
+        right: 30px;
+        cursor: pointer;
+        font-size: 18px;
+        color: #333;
+        background: none;
+        border: none;
+        
+    }
+    button:hover {
+        background-color: #33333344;
+    }
+
+
+}

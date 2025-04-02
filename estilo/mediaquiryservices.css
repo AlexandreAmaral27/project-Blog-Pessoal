@@ -13,6 +13,8 @@
          margin-bottom: 2%;
          
      }
+    
+    
      .inner-projetos-concluidos{
         margin-top: 25px;
         width: 95%;
@@ -30,6 +32,15 @@
         padding: 10px;
         
     
+     }
+
+     .call-action p{
+      padding-top: 25px;
+
+     }
+
+     .inner-full-stack{
+      margin-top: 5%;
      }
 }
 

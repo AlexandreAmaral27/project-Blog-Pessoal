@@ -81,6 +81,7 @@
 
 
    }
+   
   .menu02{
    display: block;
   }
@@ -140,10 +141,19 @@
     .navicon img {
         width: 40px;
     }
-
-  
+    .inner-Visao-geral h2{
+      padding-left: 7%;
+     }
+    .inner-Visao-geral h4{
+      padding-left: 7%;
+     }
+     .inner-Visao-geral p{
+        padding-left: 10%;
+     }
+    
  }
 @media (max-width:970px){
+
    .button2{
       display: none;
    }
@@ -226,7 +236,18 @@
          
        }
 
-       
+
+     .conteiner-comentario h2 {
+       text-align: center;
+       color: #ffffff;
+       padding-bottom: 4%;
+      }
+      .page-inner-content h2 {
+         color: #1cd8d2d2;
+         padding-left: 20px;
+         font-weight: bold;
+         padding: 4%;
+     }
    }
    
    

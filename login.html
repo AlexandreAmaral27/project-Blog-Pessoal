@@ -169,21 +169,23 @@
         <div class="container">
            
             <!-- Formulário de Login -->
+            <!-- <form action="cadastro.php" method="post" autocomplete="on"> -->
             <div id="loginForm">
                 <h2>Login</h2>
                 <div class="form-group">
                     <label for="loginEmail">Email</label>
-                    <input type="email" id="loginEmail" placeholder="Enter your email">
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required  autocomplete="email" >
                 </div>
                 <div class="form-group">
                     <label for="loginPassword">Password</label>
-                    <input type="password" id="loginPassword" placeholder="Enter your password">
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required autocomplete="current-password">
                     <span class="toggle-password" onclick="togglePassword('loginPassword', this)">👁️</span>
                 </div>
                 <button class="btn" onclick="login()">To enter</button>
                 <span class="forgot-password" onclick="openModal()">Forgot your password?</span>
                 <p class="toggle-form" onclick="toggleForms()">Don't have an account? <strong>Sign up</strong></p>
             </div>
+           
             <!-- Formulário de Cadastro -->
             <div id="registerForm" class="hidden">
                 <h2>Register</h2>
@@ -193,11 +195,11 @@
                 </div>
                 <div class="form-group">
                     <label for="registerEmail">Email</label>
-                    <input type="email" id="registerEmail" placeholder="Enter your email">
+                    <input type="email" id="registerEmail" placeholder="Enter your email"  minlength="15" maxlength="35">
                 </div>
                 <div class="form-group">
                     <label for="registerPassword">Password</label>
-                    <input type="password" id="registerPassword" placeholder="Create a password">
+                    <input type="password" id="registerPassword" placeholder="Create a password"  minlength="8" maxlength="25">
                     <span class="toggle-password" onclick="togglePassword('registerPassword', this)">👁️</span>
                 </div>
                 <button class="btn" onclick="register()">Register</button>
@@ -214,6 +216,7 @@
                 <button class="btn" onclick="recoverPassword()">Send</button>
             </div>
         </div>
+    <!-- </form> -->
     </main>
 
     <script>

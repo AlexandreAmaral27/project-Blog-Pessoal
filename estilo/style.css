@@ -178,11 +178,13 @@ main{
     font-size: 1.1rem;
     padding-left: 10px;
     color:#797979a8;
+    transition: 1s;
 }
 .esquerda>span:hover{
    
     text-decoration: underline;
-    transition: 3s;
+    color: #1cd8d27c;
+    transition: .5s;
     
     
 }
