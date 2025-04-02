@@ -555,3 +555,45 @@ main{
     padding: 2rem 0;
     text-align: center;
   }
+
+
+
+
+
+
+
+  #h1amaral{
+  
+  padding-top: 30px;
+  padding-bottom: 40px;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+  text-shadow: 3px 3px 6px #797979d0;
+  
+}
+
+#h1amaral{
+ 
+   font-size: 3em;
+    color: #ffffff;
+    list-style: none;
+    animation: lighting 1.4s linear infinite;
+}
+
+
+@keyframes lighting {
+  0% {
+    text-shadow: 0 0 0px #fff, 0 0 0px #1cd8d267, 0 0 0px #1cd8d267;
+  }
+  50% {
+    text-shadow: 0 0 5px #fff, 0 0 5px #1cd8d267, 0 0 5px #1cd8d267;
+  }
+  100% {
+    text-shadow: 0 0 0px #fff, 0 0 0px #1cd8d267, 0 0 0px #1cd8d267;
+  }
+}
