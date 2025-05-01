@@ -69,7 +69,7 @@
     text-align: center;
     
 }
-button {
+.conteiner-script-curiosidade button {
     background-color: #797979;
     color: white;
     border: none;
@@ -78,7 +78,7 @@ button {
     cursor: pointer;
     border-radius: 5px;
 }
-button:hover {
+.conteiner-script-curiosidade button:hover {
     background-color: #1cd8d2;
 }
 
@@ -136,7 +136,7 @@ button {
 }
 button:hover {
     background:#1cd8d2;
-    transform: scale(1.05);
+   
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
