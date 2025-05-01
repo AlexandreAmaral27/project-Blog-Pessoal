@@ -1,0 +1,44 @@
+@media (max-width: 970px) {
+    .menu02 {
+        display: none;
+        list-style: none;
+        padding: 0;
+        background: #333;
+        position: absolute;
+        top: 236px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+      
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 10px;
+    }
+
+    .timeline-event {
+        width: 90%;
+        left: 5% !important;
+    }
+
+    .timeline-event::before {
+        left: -30px !important;
+    }
+}
+    
+       
+        @media (max-width: 768px) {
+            .comparison {
+                height: 250px;
+            }
+
+            .label {
+                font-size: 0.8em;
+                padding: 3px 7px;
+            }
+
+            .slider {
+                width: 4px;
+            }
+        }

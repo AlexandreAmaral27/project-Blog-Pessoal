@@ -140,3 +140,28 @@
  }
  
  
+ .services-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 20px;
+}
+.service {
+   background: rgba(255, 255, 255, 0.2);
+   padding: 20px;
+   border-radius: 15px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+   width: 300px;
+   transition: transform 0.3s ease-in-out;
+   cursor: pointer;
+}
+.service:hover {
+   transform: scale(1.05);
+   background: rgba(255, 255, 255, 0.3);
+}
+.service h2 {
+   margin-bottom: 10px;
+}
+.service p {
+   font-size: 16px;
+}
