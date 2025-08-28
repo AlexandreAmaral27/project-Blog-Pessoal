@@ -8,10 +8,9 @@
     list-style: none;
 }
 .conteiner-Notícias-Tech li{
-    font-size: 18px;
-    text-align: center;
-    padding-left: 71%;
-    padding-bottom: 35px;
+    padding-bottom: 13px;
+    display: flex;
+    justify-content: flex-end;
     
     
 }
@@ -302,13 +301,16 @@ button:hover {
     .favorite-btn {
         position: absolute;
         right: 10px;
+        width: 10%;
         cursor: pointer;
         font-size: 18px;
         color: #1cd8d2d5;
         background: none;
         border: none;
         
-    }
+    } 
+   
+    
 
     .load-more {
         background: #1cd8d2d5;
