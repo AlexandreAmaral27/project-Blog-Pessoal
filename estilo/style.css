@@ -194,6 +194,7 @@ main{
     
 }
 .esquerda>p{
+    color: #ffffffe2;
     line-height: 1.5rem;
     margin-bottom: 1.5rem;
     font-family: var(--font-padrao);
@@ -281,6 +282,54 @@ main{
  .conteiner-geral p{
   font-family: var(--font-padrao);
  }
+ 
+.tag {
+  background: #1cd8d2;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+/* Botões */
+button {
+  
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  
+}
+
+button:hover{
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #0fb9b1, #11998e);
+  color: #fff;
+}
+
+
+
+
+/* Seções */
+.visao-geral, .inner-Visao-geral {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.visao-geral h2, .inner-Visao-geral h2 {
+  margin-bottom: 1rem;
+  color: #1cd8d2;
+}
+
+.visao-geral h3 {
+  margin-top: 1rem;
+  color: #facc15;
+}
  .visao-geral{
   
   padding: 10px 60px 55px 60px;
@@ -340,14 +389,11 @@ main{
 .button2{
   width: 100%;
   color: white;
-  background-color: #3d3d3dc7;
+   background-color: #1cd8d26f;
   border: none;
   margin-top: 5px;
 }
-.button2:hover{
-  background-color: #1cd8d2c8;
-  color: #08090b;
-}
+
 .esquerda .tag {
   display: inline-block;
   font-size: 0.85rem;
@@ -458,7 +504,29 @@ main{
     
   }
   
- 
+ /* Testemunhos */
+.testemunhos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.testemunho {
+  border: 1px solid #1cd8d2;
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.testemunho:hover {
+  transform: translateY(-5px);
+  border-color: #0fb9b1;
+}
+.rate {
+  color: #facc15;
+  margin: 0.5rem 0;
+}
+
  .testemunhos{
     display: flex;
     padding: 4rem 1rem;
@@ -663,6 +731,24 @@ button {
 button:hover {
   background-color:#1cd8d2;
 }
+/* Comentários */
+.conteiner-comentario {
+  margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.comentarios-container input, 
+.comentarios-container textarea {
+  
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: #f1f5f9;
+}
+
 .comentario {
   border: 1px solid #ddd;
   padding: 10px;

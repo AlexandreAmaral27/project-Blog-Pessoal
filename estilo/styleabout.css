@@ -202,7 +202,6 @@
 
 .conteiner-inner-01 h2 {
   text-align: center;
-  color: #1cd8d2;
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
@@ -336,7 +335,6 @@
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
-  color: #1cd8d2;
 }
 
 .about2-grid {
@@ -432,7 +430,7 @@
 }
 
 .card-valores li strong {
-  color: #1cd8d2;
+  color: #ffffff;
 }
 
     @media (max-width: 970px) {

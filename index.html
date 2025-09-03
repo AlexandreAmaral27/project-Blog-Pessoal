@@ -7,6 +7,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
    <link rel="stylesheet" href="estilo/style.css">
    <link rel="stylesheet" href="estilo/mediaquiry.css">
+
+
+
 </head>
 <body>
     
@@ -52,7 +55,7 @@
                     <p>Hi, I'm Alexandre Amaral, I work as a full-stack web developer. I'm a certified full-stack web developer and I've done 3 years of training in that.</p>
                     <h2>What does a full stack developer do?</h2>
                     <p>A Full-stack Developer works by integrating different technologies to build complete web or mobile applications, ranging from the user interface to the database.</p>
-                    <button><a href="https://www.alura.com.br/artigos/full-stack?srsltid=AfmBOophsMQPYYOZafX8j9yFNCh9SB8AG41b7Bm9SwFBQWD5yY6I6qVw" target="_blank" rel="external">check more about &#8594</a></button>
+                    <a href="about.html" target="_blank" rel="external" style="text-decoration: none;"><button>check more about &#8594</button></a>
                 </div>
 
                 <div class="direita">
@@ -272,9 +275,13 @@
              <div class="inner-redes-sociais">
                 
                  <a href="https://www.instagram.com/amaral_alexandre_27/" target="_blank"><img src="imagens/logos/logo-instagram.jpg" alt=""></a>
-                 <a href="https://twitter.com/Alexandre200420" target="_blank"><img src="imagens/logos/logo-twitter.jpg" alt=""></a>
+
+                 <a href="https://www.facebook.com/alexandrekliver.amaral" target="_blank"><img src="imagens/logos/logo-facebook.jpg" alt=""></a>
+
                  <a href="https://github.com/AlexandreAmaral27" target="_blank"><img src="imagens/logos/logo-github.jpg" alt=""></a>
+
                  <a href="https://www.linkedin.com/in/alexandre-amaral-488717294/" target="_blank"><img src="imagens/logos/Logo-LinkedIn.png" alt=""></a>
+
                  <a href="https://www.youtube.com/channel/UCLGrtUtd7VcAQ5cApMTUWfA" target="_blank"><img src="imagens/logos/logo-youtube.jpg" alt=""></a>
              </div>
        </div>
@@ -285,108 +292,21 @@
           <p>Copyright 2025 - Alexandre Amaral - All rights reserved</p>
         </div>
      </footer>
+
+
+   <!-- alerta script -->
+  <script src="js/alerta.js" defer></script>
+
+   <!-- menu script -->
+
+  <script src="js/menu.js" defer></script>
+
+   <!-- comentario script -->
+  <script src="js/comentarios.js" defer></script>
+
+   <!-- tradutor script -->
+  <script src="js/tradutor.js" defer></script>
       
-     <!-- window alert -->
-     <script>
-        window.alert("Welcome to Amaral's blog! Explore the curiosities about a Full Stack Dev. 🚀")
-        window.onload = function() {
-           alert("Bem-vindo ao blog do Amaral! Explore as curiosidades sobre um Full Stack Dev. 🚀");
-                
-           };
-
-         
-     </script> 
-     <!-- window alert -->
-    
-      <!-- tradutor google -->
-     <script type="text/javascript">
-        function googleTranslateInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en', // Define o idioma padrão do site
-                includedLanguages: 'pt,es,fr', // Idiomas disponíveis
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit"></script>
-       <!-- tradutor google -->
-
-     <!-- comentario -->
-      <script>
-        document.addEventListener("DOMContentLoaded", carregarComentarios);
-
-        function adicionarComentario() {
-            const usuarioNome = document.getElementById("usuario").value.trim();
-            const comentarioTexto = document.getElementById("comentario").value.trim();
-            
-            if (usuarioNome === "" || comentarioTexto === "") {
-                alert("Por favor, preencha seu nome e comentário.");
-                return;
-            }
-            
-            const comentarioElemento = criarComentario(usuarioNome, comentarioTexto);
-            document.getElementById("lista-comentarios").appendChild(comentarioElemento);
-            
-            document.getElementById("usuario").value = "";
-            document.getElementById("comentario").value = "";
-            
-            salvarComentarios();
-        }
-
-        function criarComentario(nome, texto) {
-            const comentarioElemento = document.createElement("div");
-            comentarioElemento.classList.add("comentario");
-            
-            const nomeElemento = document.createElement("strong");
-            nomeElemento.textContent = nome;
-            
-            const textoSpan = document.createElement("span");
-            textoSpan.textContent = texto;
-            
-            const deleteBtn = document.createElement("button");
-            deleteBtn.textContent = "X";
-            deleteBtn.classList.add("delete-btn");
-            deleteBtn.onclick = function() {
-                comentarioElemento.remove();
-                salvarComentarios();
-            };
-            
-            comentarioElemento.appendChild(nomeElemento);
-            comentarioElemento.appendChild(textoSpan);
-            comentarioElemento.appendChild(deleteBtn);
-            
-            return comentarioElemento;
-        }
-
-        function salvarComentarios() {
-            const comentarios = [];
-            document.querySelectorAll(".comentario").forEach(comentario => {
-                const nome = comentario.querySelector("strong").textContent;
-                const texto = comentario.querySelector("span").textContent;
-                comentarios.push({ nome, texto });
-            });
-            localStorage.setItem("comentarios", JSON.stringify(comentarios));
-        }
-
-        function carregarComentarios() {
-            const comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
-            comentarios.forEach(({ nome, texto }) => {
-                const comentarioElemento = criarComentario(nome, texto);
-                document.getElementById("lista-comentarios").appendChild(comentarioElemento);
-            });
-        }
-    </script>
-     <!-- comentario -->
-      
-     <!-- menu -->
-     <script>
-        function toggleMenu() {
-            document.getElementById("menu").classList.toggle("active");
-        }
-    </script>
-    <!-- menu -->
-
-
-     
+       
 </body>
 </html>
